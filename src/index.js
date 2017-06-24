@@ -19,6 +19,7 @@ import styles from './assets/css/stylesheet.css'
 import Login from './utils/login'
 
 let localData = Login.getLocalData() || { profile: {} }
+console.log(localData)
 let login = Login.isLoggedIn()
 
 const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())

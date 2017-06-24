@@ -1,9 +1,10 @@
 import { SET_FEED_IMAGE } from '../actions/types'
 import firebase from 'firebase'
 
-const initialState = null
+const initialState = {}
 
 const feedReducer = (state = initialState, action) => {
+  console.log(state)
   switch (action.type) {
     case SET_FEED_IMAGE: {
       let newState = { ...state, ...{ sceneFeed: { image: action.payload } } }

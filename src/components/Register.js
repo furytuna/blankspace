@@ -13,7 +13,7 @@ class Register extends Component {
 
   loginWithFacebook = () => {
     firebase.auth().signInWithPopup(this.provider).then((result) => {
-      var token = result.credential.accessToken
+      console.log('Provider', result.user.providerData[0])
       this.props.setProfile(result.user.providerData[0])
       this.setState({
         registered: true
@@ -27,7 +27,7 @@ class Register extends Component {
   //   })
   // }
 
-  render() {  
+  render() {
     return(
       <div>
         {this.state.registered ? (
