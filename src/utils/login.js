@@ -1,8 +1,10 @@
 class Login {
   static getLocalData() {
     let profile = this.getLocalProfile()
+    let monster = this.getLocalMonster()
     return {
-      profile: profile
+      profile: profile,
+      monster: monster
     }
   }
 
@@ -10,6 +12,15 @@ class Login {
     let profile = localStorage.getItem('profile')
     if (profile) {
       return JSON.parse(profile)
+    }
+
+    return {}
+  }
+
+  static getLocalMonster() {
+    let monster = localStorage.getItem('monster')
+    if (monster) {
+      return JSON.parse(monster)
     }
 
     return {}
