@@ -28,6 +28,9 @@ class Incubate extends Component {
             </div>
           </div>
         </div>
+        {this.props.flashMessage ? (
+          <div>{this.props.flashMessage}</div>
+        ):('')}
         <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
         <MusicPlayer name="Incubate"/>
       </div>

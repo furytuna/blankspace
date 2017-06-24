@@ -11,6 +11,7 @@ class ImageAnalysis {
       }),
       features: [
         new vision.Feature('LABEL_DETECTION', 10),
+        new vision.Feature('WEB_DETECTION', 10),
       ]
     })
 
