@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import MusicPlayer from './MusicPlayer'
-import { Link } from 'react-router-dom'
 
 class Monster extends Component {
   render() {
@@ -13,7 +12,7 @@ class Monster extends Component {
           <div className="monster-bg" />
           <div className="monster-content">
             <div className="monster-mature">
-              <img src={monster.src} />
+              <img src={monster.src} alt={monster.name}/>
             </div>
             <div className="monster-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>

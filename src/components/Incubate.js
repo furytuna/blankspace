@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Eggs from '../config/eggsConfig'
 import MusicPlayer from '../containers/MusicPlayer'
 
 class Incubate extends Component {
 
   render() {
+    // console.log(this.props)
     let monster = this.props.monster.egg;
-    console.log(monster)
     let listOfFood = monster.food.map((food) => {
-      return (<li>- {food.desc} {food.require} อัน</li>) ;
+      return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
     })
 
     return (
@@ -18,7 +17,7 @@ class Incubate extends Component {
           <div className="incubate-bg" />
           <div className="incubate-content">
             <div className="incubate-egg">
-              <img src={monster.src} />
+              <img src={monster.src} alt={monster.name}/>
             </div>
             <div className="incubate-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>

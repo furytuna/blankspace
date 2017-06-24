@@ -36,14 +36,14 @@ const feedReducer = (state = initialState, action) => {
     }
     case DECREASE_FEED_REQUIREMENT: {
       let foodName = action.payload
-      let newfood = state.foods.map((food) => {
+      let newFood = state.foods.map((food) => {
         if (food.name === foodName) {
           food.require = food.require - 1
         }
         return food;
       })
-      let newState = { ...state, ...{ newfood }}
-      return state
+      let newState = { ...state, ...{newFood}}
+      return newState
     }
 
     default: {
