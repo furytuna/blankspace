@@ -1,9 +1,9 @@
 import eggGreenImage from '../assets/images/egg_green.gif'
 import eggPinkImage from '../assets/images/egg_pink.gif'
-import eggPurpleImage from '../assets/images/egg_purple.gif'
+// import eggPurpleImage from '../assets/images/egg_purple.gif'
 
 import RockmanAnimation from '../assets/images/tunagotchi/rockman.gif'
-import StichAnimation from '../assets/images/tunagotchi/stich.gif'
+// import StichAnimation from '../assets/images/tunagotchi/stich.gif'
 import NinjaAnimation from '../assets/images/tunagotchi/ninja.gif'
 
 // import OldmanAnimation from '../assets/tunagotchi/oldman.gif'

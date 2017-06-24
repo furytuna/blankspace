@@ -9,20 +9,18 @@ import firebase from 'firebase'
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 
 import 'bulma/css/bulma.css'
-import styles from './assets/css/stylesheet.css'
+import './assets/css/stylesheet.css'
 import Login from './utils/login'
 
 import registerServiceWorker from './registerServiceWorker'
 
 let localData = Login.getLocalData()
-let login = Login.isLoggedIn()
 
 const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
