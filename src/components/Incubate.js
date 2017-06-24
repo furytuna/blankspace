@@ -2,7 +2,21 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import MusicPlayer from '../containers/MusicPlayer'
 
+
 class Incubate extends Component {
+
+  share() {
+    if (navigator.share) {
+      navigator.share({
+          title: "มาดูไข่ของฉันสิ!!!",
+          text: "มาดูไข่ของฉันบน Tunagotchi สิ, เราจะกู้โลกไปด้วยกัน!",
+          url: window.location.href
+      }).then(() => console.log('Successful share'))
+      .catch(error => console.log('Error sharing:', error));
+    } else {
+      console.log('Navigator is not available')
+    }
+  }
 
   render() {
     // console.log(this.props)
@@ -33,6 +47,7 @@ class Incubate extends Component {
         ):('')}
         <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
         <MusicPlayer name="Incubate"/>
+        <a onClick={this.share}>Share</a>
       </div>
     )
   }

@@ -16,6 +16,13 @@ export default class RandomEgg extends Component {
       let monster = Eggs[keys[random_key_number]]
       props.setMonster(props.uid, monster)
     }
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    if ("vibrate" in navigator) {
+      console.log("vibration API supported")
+      navigator.vibrate([500, 300, 100]);
+    } else {
+      console.log("vibration API not supported")
+    }
   }
 
   componentWillMount() {
