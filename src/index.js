@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Prologue from './components/Prologue'
 import RandomEgg from './components/RandomEgg'
 import Incubate from './containers/Incubate'
-import Feed from './components/Feed'
+import Feed from './containers/Feed'
 import MusicControl from './components/MusicControl'
 import firebase from 'firebase'
 import {
