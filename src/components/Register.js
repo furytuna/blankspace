@@ -10,7 +10,7 @@ class Register extends Component {
   loginWithFacebook = () => {
     firebase.auth().signInWithPopup(this.provider).then((result) => {
       var token = result.credential.accessToken
-      this.props.setProfile(result.user)
+      this.props.setProfile(result.user.providerData[0])
     })
   }
 
