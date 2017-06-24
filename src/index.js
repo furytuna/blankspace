@@ -20,10 +20,6 @@ import Login from './utils/login'
 
 import registerServiceWorker from './registerServiceWorker'
 
-let localData = Login.getLocalData()
-
-const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
 var config = {
   apiKey: "AIzaSyCTk3XG7Zm_AsSlCxVbiS43kF3DAxMXmoY",
   authDomain: "blankspace-3ffc8.firebaseapp.com",
@@ -34,18 +30,37 @@ var config = {
 };
 firebase.initializeApp(config);
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <div className="container is-fluid">
-        <Route exact path="/" component={Prologue}/>
-        <Route exact path="/sceneRandomEgg" component={RandomEgg}/>
-        <Route exact path="/sceneIncubate" component={Incubate}/>
-        <Route exact path="/sceneFeed" component={Feed}/>
-        <Route exact path="/sceneMonster" component={Monster}/>
-      </div>
-    </Router>
-  </Provider>
-)
-ReactDOM.render(<App />, document.getElementById('root'))
-registerServiceWorker()
+let localData = Login.getLocalData()
+
+function startApp(baseData) {
+    const store = createStore(rootReducer, baseData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+    const App = () => (
+      <Provider store={store}>
+        <Router>
+          <div className="container is-fluid">
+            <Route exact path="/" component={Prologue} />
+            <Route exact path="/sceneRandomEgg" component={RandomEgg} />
+            <Route exact path="/sceneIncubate" component={Incubate} />
+            <Route exact path="/sceneFeed" component={Feed} />
+            <Route exact path="/sceneMonster" component={Monster} />
+          </div>
+        </Router>
+      </Provider>
+    )
+
+    ReactDOM.render(<App />, document.getElementById('root'))
+    registerServiceWorker()
+}
+
+
+if (localData.profile.uid) {
+  firebase.database().ref('users/' + localData.profile.uid).once('value').then((snapshot) => {
+    let firebaseData = snapshot.val()
+    console.log('Firebase data', firebaseData)
+    startApp(firebaseData)
+  })
+} else {
+  console.log('Local data')
+  startApp(localData)
+}
