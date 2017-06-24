@@ -58,7 +58,7 @@ export default {
           require: 1
         },
         {
-          name: "people",
+          name: "social group",
           desc: "กลุ่มคน",
           require: 2
         },
