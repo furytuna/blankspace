@@ -1,5 +1,12 @@
 {
   "hosting": {
     "public": "build"
-  }
+  },
+  "redirects": [ 
+    {
+      "source" : "http://blankspace-3ffc8.firebaseapp.com/",
+      "destination" : "https://blankspace-3ffc8.firebaseapp.com/",
+      "type" : 301
+    }
+  ]
 }
