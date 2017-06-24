@@ -15,7 +15,6 @@ export default class Feed extends Component {
   }
 
   capture = () => {
-    console.log('capture')
     const imageSrc = this.webcam.getScreenshot()
     this.setState({
       img: imageSrc,
@@ -28,25 +27,27 @@ export default class Feed extends Component {
   analyzeImage = (image) => {
     let listOfRequiredFoods = this.props.monster.egg.food
 
-    console.log(listOfRequiredFoods)
-
     ImageAnalysis.getDataFromImage(image).then((data) => {
-      console.log(data)
       let matchedImageLabel = listOfRequiredFoods.filter((food) => {
-        return JSON.parse(data)[0].labelAnnotations.filter((item) => (item.description === food.name && food.require > 0)).length > 0
+        let resultLabel = JSON.parse(data)[0].labelAnnotations.filter((item) => (item.description.toLowerCase() === food.name.toLowerCase() && food.require > 0)).length > 0
+        let resultWeb = JSON.parse(data)[0].webDetection.webEntities.filter((item) => (item.description.toLowerCase() === food.name.toLowerCase() && food.require > 0)).length > 0
+
+        return resultLabel || resultWeb
       })
 
-      console.log('Matched label: ', matchedImageLabel);
+      let flashMessage = ''
 
       if (matchedImageLabel.length > 0) {
-        matchedImageLabel.map((label) => (
+        let listLabel = matchedImageLabel.map((label) => {
           this.props.decreateFeedRequirement(this.props.monster.egg.food, label.name)
-        ))
-        this.props.setFlashMessage('Matched food & Decrease')
-        console.log('Matched food & Decrease')
+          return label.desc
+        })
+
+        flashMessage = `ให้อาหาร ${listLabel.join()} แล้ว จย้าา~!!`
+        this.props.setFlashMessage(flashMessage)
       } else {
-        this.props.setFlashMessage('Not matched food')
-        console.log('Not matched food')
+        flashMessage = 'ไม่เจออาหาร จย้าา~!'
+        this.props.setFlashMessage(flashMessage)
       }
       this.setState({
         result: true
