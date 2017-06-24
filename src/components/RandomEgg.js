@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default class RandomEgg extends Component {
   render() {
     return (
-      <div>
+      <div className="random-egg-wrapper">
         <h1 className="title">เลือก Monster คู่กาย</h1>
         <p>Monster ตัวนี้จะคอยติดตามคุณไปทุกที่</p>
         <p>มันจะร่วมต่อสู้และผจญภัยไปคุณ</p>

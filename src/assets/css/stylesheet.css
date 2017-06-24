@@ -18,7 +18,7 @@ body {
 
 
 .prologue-wrapper {
-    background: url(../images/prologue_bg.jpg) no-repeat center center fixed;
+    background: url(../images/bg_prologue.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -26,13 +26,26 @@ body {
     height: 100vh;
 }
 
-.prologue-content {
+.prologue-box {
     padding: 0.25em 0.5em 0.25em;
+    opacity: 0.5;
+    /*z-index: -1;*/
 }
 
-.text-for-read {
-    color: #ff3860;
+.prologue-content {
+    /*color: #ff3860;
     font-size: 0.8em;
-    font-weight: normal;
-    
+    font-weight: normal;*/
+    opacity: 1;
+    /*z-index: 999;*/
+}
+
+
+.random-egg-wrapper {
+    background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
 }
