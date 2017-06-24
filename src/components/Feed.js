@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Webcam from '../utils/react-webcam'
+import ImageAnalysis from '../utils/react-vision'
 
 export default class Feed extends Component {
   constructor(props) {
@@ -10,15 +11,59 @@ export default class Feed extends Component {
     }
   }
   setRef = (webcam) => {
-    this.webcam = webcam;
+    this.webcam = webcam
   }
+
   capture = () => {
-    const imageSrc = this.webcam.getScreenshot();
-    alert(imageSrc)
+    const imageSrc = this.webcam.getScreenshot()
     this.setState({
       img: imageSrc
     })
+
+    this.analyst(imageSrc)
   }
+
+  analyst = (image) => {
+    let mockFoods = [
+      {
+        name: "sky",
+        desc: "ท้องฟ้า",
+        require: 1
+      },
+      {
+        name: "rock",
+        desc: "หิน",
+        require: 3
+      },
+      {
+        name: "male",
+        desc: "ผู้ชาย",
+        require: 1
+      },
+      {
+        name: "glasses",
+        desc: "แว่นตา",
+        require: 1
+      }
+    ]
+
+    ImageAnalysis.getDataFromImage(image).then((data) => {
+      let matchedImageLabel = mockFoods.filter((food) => {
+        return JSON.parse(data)[0].labelAnnotations.filter((item) => (item.description === food.name)).length > 0
+      })
+
+      if (matchedImageLabel) {
+        matchedImageLabel.map((label) => (
+          this.props.decreateFeedRequirement(label.name)
+        ))
+
+        console.log('Matched food & Decrease')
+      } else {
+        console.log('Not matched food')
+      }
+    })
+  }
+
   render() {
     return (
       <div className="is-center">
