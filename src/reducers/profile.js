@@ -6,8 +6,10 @@ const initialState = null
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_PROFILE: {
+      console.log('State', state)
+      console.log('Payload', action.payload)
       let newState = { ...state, ...{ profile: action.payload } }
-      console.log(newState)
+      localStorage.setItem('current_user', JSON.stringify(newState))
       firebase.database().ref('users/' + action.payload.uid).set(newState)
       return newState
     }

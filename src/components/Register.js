@@ -9,7 +9,7 @@ class Register extends Component {
 
   loginWithFacebook = () => {
     firebase.auth().signInWithPopup(this.provider).then((result) => {
-      var token = result.credential.accessToken
+      console.log('Provider', result.user.providerData[0])
       this.props.setProfile(result.user.providerData[0])
     })
   }
@@ -20,10 +20,10 @@ class Register extends Component {
   //   })
   // }
 
-  render() {  
+  render() {
     return(
       <div>
-        <button onClick={this.loginWithFacebook}>Login with Facebook</button>
+        <button className="loginBtn loginBtn--facebook" onClick={this.loginWithFacebook}>Login with Facebook</button>
         {/*<button onClick={this.logOut}>Log Out</button>*/}
       </div>
     )

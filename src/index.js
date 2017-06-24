@@ -15,8 +15,13 @@ import rootReducer from './reducers'
 
 import 'bulma/css/bulma.css'
 import styles from './assets/css/stylesheet.css'
+import Login from './utils/login'
 
-const store = createStore(rootReducer)
+let localData = Login.getLocalData() || { profile: {} }
+console.log(localData)
+let login = Login.isLoggedIn()
+
+const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 var config = {
   apiKey: "AIzaSyCTk3XG7Zm_AsSlCxVbiS43kF3DAxMXmoY",
