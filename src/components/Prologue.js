@@ -19,11 +19,9 @@ export default class Prologue extends Component {
                 คอยเสาะหาผู้กล้าเพื่อมาต่อกรและโค่นล้ม Veda
                 โดยกุญแจสำคัญคือแผงวงจรเกมในตำนานที่มีชื่อว่า ...
                 <h1 className="title">"TunaGotchi"</h1>
-
-
             </div>
         </div>
-        <MusicPlayer />
+        <MusicPlayer name="Prologue"/>
         <Register />
       </div>
     )
