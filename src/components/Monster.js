@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 class Monster extends Component {
   render() {
+    let monster = this.props.monster
     console.log('Monster', this.props.monster)
     console.log('currentMonsterState', this.props.currentMonsterState)
     return (
