@@ -22,7 +22,7 @@ export default class Prologue extends Component {
               <h1 className="title"><b>"TunaGotchi"</b></h1>
           </div>
         </div>
-        {/*<MusicPlayer name="Prologue"/>*/}
+        <MusicPlayer name="Prologue"/>
         <Register />
       </div>
     )
