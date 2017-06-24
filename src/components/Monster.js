@@ -11,22 +11,16 @@ class Monster extends Component {
         <div className="monster-box">
           <div className="monster-bg" />
           <div className="monster-content">
-            <div className="monster-egg">
+            <div className="monster-mature">
               <img src={monster.src} />
             </div>
             <div className="monster-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>
-              <h1><b>รายการอาหาร</b></h1>
-              <ul className="has-text-left">
-                { listOfFood }
-              </ul>
+              <h1><b>ความเป็นมา</b></h1>
+              <p></p>
             </div>
           </div>
         </div>
-        <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
-        {/*<audio autoPlay={true}>
-          <source src="../assets/audio/intro.mp3" type="audio/mpeg" />
-        </audio>*/}
         <MusicPlayer name="Monster"/>
       </div>
     )

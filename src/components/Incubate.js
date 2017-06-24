@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Eggs from '../config/eggsConfig'
+import MusicPlayer from './MusicPlayer'
 
 class Incubate extends Component {
+
   render() {
-    let monster = Eggs.Ninja.egg;
+    let monster = this.props.monster.egg;
+    console.log(monster)
     let listOfFood = monster.food.map((food) => {
       return (<li>- {food.desc} {food.require} อัน</li>) ;
-    });
+    })
 
     return (
       <div className="incubate-wrapper container has-text-centered column">
@@ -27,9 +30,7 @@ class Incubate extends Component {
           </div>
         </div>
         <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
-        <audio autoPlay={true}>
-          <source src="../assets/audio/intro.mp3" type="audio/mpeg" />
-        </audio>
+        <MusicPlayer name="Incubate"/>
       </div>
     )
   }

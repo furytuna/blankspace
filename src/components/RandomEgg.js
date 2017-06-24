@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import MusicPlayer from './MusicPlayer'
 import Login from '../utils/login'
+import Eggs from '../config/eggsConfig'
 
 export default class RandomEgg extends Component {
   constructor(props) {
     super(props)
     this.state = {
       toHome: false
+    }
+    if (!props.monster) {
+      let keys = Object.keys(Eggs)
+      let random_key_number = Math.floor(Math.random() * keys.length)
+      let monster = Eggs[keys[random_key_number]]
+      props.setMonster(props.uid, monster)
     }
   }
 
@@ -32,9 +40,7 @@ export default class RandomEgg extends Component {
           </div>
         </div>
         <Link to='/sceneIncubate' className="button is-primary">สุ่ม Tunagotchi</Link>
-        <audio autoPlay={true}>
-            <source src="../assets/audio/intro.mp3" type="audio/mpeg"/>
-        </audio>
+        <MusicPlayer name="RandomEgg"/>
       </div>
     )
   }

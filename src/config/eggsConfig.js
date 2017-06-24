@@ -1,4 +1,3 @@
-
 import eggGreenImage from '../assets/images/egg_green.gif'
 import eggPinkImage from '../assets/images/egg_pink.gif'
 import eggPurpleImage from '../assets/images/egg_purple.gif'

@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Prologue from './components/Prologue'
-import RandomEgg from './components/RandomEgg'
+import RandomEgg from './containers/RandomEgg'
 import Incubate from './containers/Incubate'
-import Feed from './components/Feed'
+import Feed from './containers/Feed'
 import Monster from './components/Monster'
 import firebase from 'firebase'
 import {
@@ -49,6 +49,5 @@ const App = () => (
     </Router>
   </Provider>
 )
-
 ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
