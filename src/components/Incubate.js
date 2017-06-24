@@ -26,7 +26,8 @@ class Incubate extends Component {
           <li>ปลา 3 ตัว</li>
           <li>น้ำ 1 แก้ว</li>
         </ul>
-        <input className="button is-primary" type="file" accept="image/*" capture="camera" id="camera" onChange={this.handleCameraOnChange} />
+        <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
+        {/*<input className="button is-primary" type="file" accept="image/*" capture="camera" id="camera" onChange={this.handleCameraOnChange} />*/}
         <audio autoPlay={true}>
           <source src="../assets/audio/intro.mp3" type="audio/mpeg" />
         </audio>
