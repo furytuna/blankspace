@@ -19,6 +19,8 @@ import 'bulma/css/bulma.css'
 import styles from './assets/css/stylesheet.css'
 import Login from './utils/login'
 
+import registerServiceWorker from './registerServiceWorker'
+
 let localData = Login.getLocalData() || { profile: {} }
 console.log(localData)
 let login = Login.isLoggedIn()
@@ -50,3 +52,4 @@ const App = () => (
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
+registerServiceWorker()
