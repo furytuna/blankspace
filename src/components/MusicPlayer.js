@@ -8,33 +8,31 @@ class MusicPlayer extends Component {
     this.audio = new Audio
     this.audio.loop = true
     this.state = {
-      autoplay: true,
-      playing: false,
       song: songs[props.name]
     }
   }
 
   componentDidMount() {
-    if (this.state.autoplay) {
+    if (this.props.music_player == "PLAY") {
       this.playSong()
     }
   }
 
   playSong = () => {
-    this.setState({ playing: true })
     this.audio.src = this.state.song
     this.audio.play()
+    this.props.setMusicStatus(this.props.uid, 'PLAY')
   }
 
   pauseSong = () => {
-    this.setState({ playing: false})
     this.audio.pause()
+    this.props.setMusicStatus(this.props.uid, 'PAUSE')
   }
   
   render() { 
     return(
       <div>
-        <button onClick={this.state.playing ? this.pauseSong : this.playSong}>|></button>
+        <button onClick={this.props.music_player == "PLAY" ? this.pauseSong : this.playSong}>|></button>
       </div>
     )
   }

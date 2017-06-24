@@ -29,9 +29,7 @@ class Incubate extends Component {
           </div>
         </div>
         <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
-        <audio autoPlay={true}>
-          <source src="../assets/audio/intro.mp3" type="audio/mpeg" />
-        </audio>
+        <MusicPlayer name="Incubate"/>
       </div>
     )
   }

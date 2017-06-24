@@ -3,3 +3,4 @@
 (Intro2) Visager_-_02_-_Royal_Entrance.mp3
 (Battle 1) Visager - 05 - Battle.mp3
 (Incubate) Visager_-_08_-_Winter_Village.mp3
+(Monster) Kulor_-_03_-_Fashion_Queen.mp3
