@@ -31,6 +31,11 @@ export default {
           name: "male",
           desc: "ผู้ชาย",
           require: 1
+        },
+        {
+          name: "glasses",
+          desc: "แว่นตา",
+          require: 2
         }
       ]
     },

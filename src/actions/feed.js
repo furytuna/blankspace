@@ -5,9 +5,9 @@ const setFeedImage = (image) => ({
   payload: image
 })
 
-const decreateFeedRequirement = (foodName) => ({
+const decreateFeedRequirement = (requiredFoods, foodName) => ({
   type: DECREASE_FEED_REQUIREMENT,
-  payload: foodName
+  payload: { requiredFoods, foodName }
 })
 
 export {

@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  decreateFeedRequirement: (payload) => dispatch(decreateFeedRequirement(payload))
+  decreateFeedRequirement: (requiredFoods, foodName) => dispatch(decreateFeedRequirement(requiredFoods, foodName))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed)
