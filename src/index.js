@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Prologue from './components/Prologue'
+import RandomEgg from './components/RandomEgg'
+import Incubate from './components/Incubate'
 import firebase from 'firebase'
 import {
   BrowserRouter as Router,
@@ -31,6 +33,8 @@ const App = () => (
     <Router>
       <div className="container is-fluid">
         <Route exact path="/" component={Prologue}/>
+        <Route exact path="/sceneRandomEgg" component={RandomEgg}/>
+        <Route exact path="/sceneIncubate" component={Incubate}/>
       </div>
     </Router>
   </Provider>
