@@ -3,9 +3,9 @@ import eggGreenImage from '../assets/images/egg_green.gif'
 import eggPinkImage from '../assets/images/egg_pink.gif'
 import eggPurpleImage from '../assets/images/egg_purple.gif'
 
-import RockmanAnimation from '../assets/tunagotchi/rockman.gif'
-import StichAnimation from '../assets/tunagotchi/stich.gif'
-import NinjaAnimation from '../assets/tunagotchi/ninja.gif'
+import RockmanAnimation from '../assets/images/tunagotchi/rockman.gif'
+import StichAnimation from '../assets/images/tunagotchi/stich.gif'
+import NinjaAnimation from '../assets/images/tunagotchi/ninja.gif'
 
 // import OldmanAnimation from '../assets/tunagotchi/oldman.gif'
 // import YoungmanAnimation from '../assets/tunagotchi/youngman.gif'
@@ -66,7 +66,7 @@ export default {
       ]
     },
     mature: {
-      src: NijaAnimation,
+      src: NinjaAnimation,
       name: "นินจา นาจา",
       ability: {
 

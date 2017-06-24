@@ -26,7 +26,7 @@ export default class RandomEgg extends Component {
         <div className="random-egg-box">
           <div className="random-egg-bg box" />
           <div className="random-egg-content">
-              <h1 className="title"><b>เลือก Tunagotchi คู่กาย</b></h1>
+              <h1 className="title"><b>เลือก "TunaGotchi" คู่กาย</b></h1>
               Tunagotchi ตัวนี้จะคอยติดตามคุณไปทุกที่
               มันจะร่วมต่อสู้และผจญภัยไปคุณ
           </div>

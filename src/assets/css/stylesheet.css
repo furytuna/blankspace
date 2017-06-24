@@ -90,6 +90,11 @@ body {
 	position: absolute;
 	z-index: 2;
 }
+
+.random-egg-content .title {
+	font-size: 28px;
+	padding-bottom: 16px;
+}
 /* Random Egg */
 
 /* Facebook Login */
