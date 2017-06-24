@@ -21,7 +21,7 @@ class MusicPlayer extends Component {
   playSong = () => {
     this.audio.src = this.state.song
     this.audio.play()
-    this.props.setMusicStatus({ this.props.uid, 'PLAY')
+    this.props.setMusicStatus(this.props.uid, 'PLAY')
   }
 
   pauseSong = () => {
