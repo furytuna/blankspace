@@ -1,21 +1,40 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import audio from '../config/audioConfig'
-
-var musicStatus = 'START'
+import songs from '../config/audioConfig'
 
 class MusicPlayer extends Component {
   constructor(props) {
     super(props)
+    this.audio = new Audio
+    this.audio.loop = true
+    this.state = {
+      autoplay: true,
+      playing: false,
+      song: songs[props.name]
+    }
+  }
+
+  componentDidMount() {
+    if (this.state.autoplay) {
+      this.playSong()
+    }
+  }
+
+  playSong = () => {
+    this.setState({ playing: true })
+    this.audio.src = this.state.song
+    this.audio.play()
+  }
+
+  pauseSong = () => {
+    this.setState({ playing: false})
+    this.audio.pause()
   }
   
   render() { 
-    console.log(this.audio) 
     return(
       <div>
-        <audio autoPlay={musicStatus === 'START' ? true : false} >
-            <source src={audio[this.props.name]} type="audio/mpeg"/>
-        </audio>
+        <button onClick={this.state.playing ? this.pauseSong : this.playSong}>|></button>
       </div>
     )
   }
