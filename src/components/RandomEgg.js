@@ -13,8 +13,8 @@ export default class RandomEgg extends Component {
   componentWillMount() {
     let localData = Login.getLocalData()
     console.log(localData)
-    if (!(localData && localData.profile.uid)) {
-      this.setState({ toHome: false })
+    if (!Login.isLoggedIn()) {
+      this.setState({ toHome: true })
     }
   }
 
@@ -26,7 +26,7 @@ export default class RandomEgg extends Component {
         <div className="random-egg-box">
           <div className="random-egg-bg box" />
           <div className="random-egg-content">
-              <h1 className="title"><b>เลือก Tunagotchi คู่กาย</b></h1>
+              <h1 className="title"><b>เลือก "TunaGotchi" คู่กาย</b></h1>
               Tunagotchi ตัวนี้จะคอยติดตามคุณไปทุกที่
               มันจะร่วมต่อสู้และผจญภัยไปคุณ
           </div>

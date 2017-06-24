@@ -1,19 +1,26 @@
 class Login {
   static getLocalData() {
-    let raw_json = localStorage.getItem('current_user')
-    if (raw_json) {
-      return JSON.parse(raw_json)
+    let profile = this.getLocalProfile()
+    return {
+      profile: profile
+    }
+  }
+
+  static getLocalProfile() {
+    let profile = localStorage.getItem('profile')
+    if (profile) {
+      return JSON.parse(profile)
     }
 
-    return false
+    return {}
   }
 
   static isLoggedIn() {
     let localData = this.getLocalData()
-    if (localData) {
+    if (typeof localData.profile.uid !== undefined && localData.profile.uid)
       return true
-    }
-    return false
+    else
+      return false
   }
 }
 

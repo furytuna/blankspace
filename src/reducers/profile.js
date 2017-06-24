@@ -8,9 +8,9 @@ const profileReducer = (state = initialState, action) => {
     case SET_PROFILE: {
       console.log('State', state)
       console.log('Payload', action.payload)
-      let newState = { ...state, ...{ profile: action.payload } }
-      localStorage.setItem('current_user', JSON.stringify(newState))
-      firebase.database().ref('users/' + action.payload.uid).set(newState)
+      let newState = action.payload
+      localStorage.setItem('profile', JSON.stringify(newState))
+      firebase.database().ref('users/' + action.payload.uid + '/profile').set(newState)
       return newState
     }
 

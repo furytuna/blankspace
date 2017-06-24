@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import { Redirect } from 'react-router'
 
 class Register extends Component {
   constructor(props) {
     super(props)
     this.provider = new firebase.auth.FacebookAuthProvider()
+    this.state = {
+      registered: false
+    }
   }
 
   loginWithFacebook = () => {
     firebase.auth().signInWithPopup(this.provider).then((result) => {
       console.log('Provider', result.user.providerData[0])
       this.props.setProfile(result.user.providerData[0])
+      this.setState({
+        registered: true
+      })
     })
   }
 
@@ -23,8 +30,11 @@ class Register extends Component {
   render() {
     return(
       <div>
-        <button className="loginBtn loginBtn--facebook" onClick={this.loginWithFacebook}>Login with Facebook</button>
-        {/*<button onClick={this.logOut}>Log Out</button>*/}
+        {this.state.registered ? (
+          <Redirect to="/sceneRandomEgg" />
+        ) : (
+          <button onClick={this.loginWithFacebook} className="button is-primary">Login with Facebook</button>
+        )}
       </div>
     )
   }
