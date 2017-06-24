@@ -6,7 +6,7 @@ import MusicPlayer from './MusicPlayer'
 export default class Prologue extends Component {
   render() {
     return (
-      <div className="prologue-wrapper has-text-centered column">
+      <div className="prologue-wrapper container has-text-centered column">
         <div className="prologue-box">
           <div className="prologue-bg box" />
           <div className="prologue-content">
@@ -22,7 +22,7 @@ export default class Prologue extends Component {
               <h1 className="title"><b>"TunaGotchi"</b></h1>
           </div>
         </div>
-        <MusicPlayer />
+        <MusicPlayer name="Prologue"/>
         <Register />
       </div>
     )
