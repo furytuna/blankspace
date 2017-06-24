@@ -1,10 +1,27 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+import Login from '../utils/login'
 
 export default class RandomEgg extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      toHome: false
+    }
+  }
+
+  componentWillMount() {
+    let localData = Login.getLocalData()
+    console.log(localData)
+    if (!(localData && localData.profile.uid)) {
+      this.setState({ toHome: true })
+    }
+  }
+
   render() {
     return (
       <div className="random-egg-wrapper">
+        { this.state.toHome && <Redirect to="/" /> }
         <h1 className="title">เลือก Monster คู่กาย</h1>
         <p>Monster ตัวนี้จะคอยติดตามคุณไปทุกที่</p>
         <p>มันจะร่วมต่อสู้และผจญภัยไปคุณ</p>
