@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import MusicPlayer from './MusicPlayer'
 import Login from '../utils/login'
 
 export default class RandomEgg extends Component {
