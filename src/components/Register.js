@@ -20,10 +20,10 @@ class Register extends Component {
   //   })
   // }
 
-  render() {  
+  render() {
     return(
       <div>
-        <button onClick={this.loginWithFacebook}>Login with Facebook</button>
+        <button className="loginBtn loginBtn--facebook" onClick={this.loginWithFacebook}>Login with Facebook</button>
         {/*<button onClick={this.logOut}>Log Out</button>*/}
       </div>
     )
