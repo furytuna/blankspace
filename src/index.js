@@ -28,9 +28,11 @@ firebase.initializeApp(config);
 
 const App = () => (
   <Provider store={store}>
-    <div className="container is-fluid">
-        <Prologue />
-    </div>
+    <Router>
+      <div className="container is-fluid">
+        <Route exact path="/" component={Prologue}/>
+      </div>
+    </Router>
   </Provider>
 )
 
