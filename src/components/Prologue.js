@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Register from '../containers/Register'
-// import MusicPlayer from './MusicPlayer'
+import MusicPlayer from './MusicPlayer'
 
 export default class Prologue extends Component {
   render() {
@@ -14,9 +14,7 @@ export default class Prologue extends Component {
         <p>แต่ความหวังยังคงมี กลุ่ม Programmer โลกเก่าได้ตั้งตัวขึ้นอย่างลับๆ คอยเสาะหาผู้กล้าเพื่อมาต่อกรและโค่นล้ม Veda</p>
         <p>โดยกุญแจสำคัญคือแผงวงจรเกมในตำนานที่มีชื่อว่า ...</p> 
         <h1 className="title">"TunaGotchi"</h1>
-        <audio autoPlay={true}>
-            <source src="../assets/audio/intro.mp3" type="audio/mpeg"/>
-        </audio>
+        <MusicPlayer />
         <Register />
       </div>
     )
