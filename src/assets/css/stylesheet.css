@@ -15,3 +15,24 @@
 body {
   font-family: 'RD CHULAJARUEK';
 }
+
+
+.prologue-wrapper {
+    background: url(../images/prologue_bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+}
+
+.prologue-content {
+    padding: 0.25em 0.5em 0.25em;
+}
+
+.text-for-read {
+    color: #ff3860;
+    font-size: 0.8em;
+    font-weight: normal;
+    
+}
