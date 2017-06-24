@@ -18,6 +18,10 @@ class MusicPlayer extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.audio.stop()
+  }
+
   playSong = () => {
     this.audio.src = this.state.song
     this.audio.play()
