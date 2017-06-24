@@ -3,7 +3,8 @@ import Incubate from '../components/Incubate'
 
 const mapStateToProps = (state) => ({
   monster: state.monster,
-  uid: state.profile.uid
+  uid: state.profile.uid,
+  flashMessage: state.flash_message
 })
 
 
