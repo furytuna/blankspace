@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import profileReducer from './profile'
-import feedReducer from './feed'
+import monsterReducer from './monster'
 
 const rootReducer = combineReducers({
   profile: profileReducer,
-  feed: feedReducer
+  monster: monsterReducer
 })
 
 export default rootReducer

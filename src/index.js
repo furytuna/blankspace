@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Prologue from './components/Prologue'
-import RandomEgg from './components/RandomEgg'
+import RandomEgg from './containers/RandomEgg'
 import Incubate from './containers/Incubate'
 import Feed from './components/Feed'
 import MusicControl from './components/MusicControl'
@@ -50,6 +50,5 @@ const App = () => (
     </Router>
   </Provider>
 )
-
 ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()

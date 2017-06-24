@@ -1,2 +1,2 @@
 export const SET_PROFILE = 'SET_PROFILE'
-export const SET_FEED_IMAGE = 'SET_FEED_IMAGE'
+export const SET_MONSTER = 'SET_MONSTER'

@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import Eggs from '../config/eggsConfig'
 
 class Incubate extends Component {
+
   render() {
-    let monster = Eggs.Ninja.egg;
+    let monster = this.props.monster.egg;
+    console.log(monster)
     let listOfFood = monster.food.map((food) => {
       return (<li>- {food.desc} {food.require} อัน</li>) ;
-    });
+    })
 
     return (
       <div className="incubate-wrapper container has-text-centered column">
