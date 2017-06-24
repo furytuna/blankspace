@@ -36,6 +36,11 @@ export default {
           name: "glasses",
           desc: "แว่นตา",
           require: 2
+        },
+        {
+          name: "mobile phone",
+          desc: "โทรศัพท์",
+          require: 4
         }
       ]
     },

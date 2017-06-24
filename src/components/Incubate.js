@@ -5,7 +5,6 @@ import MusicPlayer from '../containers/MusicPlayer'
 class Incubate extends Component {
 
   render() {
-    // console.log(this.props)
     let monster = this.props.monster.egg;
     let listOfFood = monster.food.map((food) => {
       return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
