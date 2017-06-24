@@ -14,17 +14,23 @@ export default class RandomEgg extends Component {
     let localData = Login.getLocalData()
     console.log(localData)
     if (!(localData && localData.profile.uid)) {
-      this.setState({ toHome: true })
+      this.setState({ toHome: false })
     }
   }
 
   render() {
+    console.log(this.state.toHome);
     return (
-      <div className="random-egg-wrapper">
+      <div className="random-egg-wrapper container has-text-centered column">
         { this.state.toHome && <Redirect to="/" /> }
-        <h1 className="title">เลือก Monster คู่กาย</h1>
-        <p>Monster ตัวนี้จะคอยติดตามคุณไปทุกที่</p>
-        <p>มันจะร่วมต่อสู้และผจญภัยไปคุณ</p>
+        <div className="random-egg-box">
+          <div className="random-egg-bg box" />
+          <div className="random-egg-content">
+              <h1 className="title"><b>เลือก Monster คู่กาย</b></h1>
+              Monster ตัวนี้จะคอยติดตามคุณไปทุกที่
+              มันจะร่วมต่อสู้และผจญภัยไปคุณ
+          </div>
+        </div>
         <Link to='/sceneIncubate' className="button is-primary">สุ่ม Monster</Link>
         <audio autoPlay={true}>
             <source src="../assets/audio/intro.mp3" type="audio/mpeg"/>
