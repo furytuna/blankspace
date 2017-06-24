@@ -32,9 +32,7 @@ export default class RandomEgg extends Component {
           </div>
         </div>
         <Link to='/sceneIncubate' className="button is-primary">สุ่ม Tunagotchi</Link>
-        <audio autoPlay={true}>
-            <source src="../assets/audio/intro.mp3" type="audio/mpeg"/>
-        </audio>
+        <MusicPlayer name="RandomEgg"/>
       </div>
     )
   }

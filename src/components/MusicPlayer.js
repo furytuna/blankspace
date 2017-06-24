@@ -30,7 +30,6 @@ class MusicPlayer extends Component {
   }
   
   render() { 
-    console.log('state', this.props.uid)
     return(
       <div>
         <button onClick={this.props.music_player == "PLAY" ? this.pauseSong : this.playSong}>|></button>

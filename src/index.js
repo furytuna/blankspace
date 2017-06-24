@@ -4,7 +4,7 @@ import Prologue from './components/Prologue'
 import RandomEgg from './components/RandomEgg'
 import Incubate from './containers/Incubate'
 import Feed from './containers/Feed'
-import MusicControl from './components/MusicControl'
+import Monster from './components/Monster'
 import firebase from 'firebase'
 import {
   BrowserRouter as Router,
@@ -22,7 +22,6 @@ import Login from './utils/login'
 import registerServiceWorker from './registerServiceWorker'
 
 let localData = Login.getLocalData() || { profile: {} }
-console.log(localData)
 let login = Login.isLoggedIn()
 
 const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -45,7 +44,7 @@ const App = () => (
         <Route exact path="/sceneRandomEgg" component={RandomEgg}/>
         <Route exact path="/sceneIncubate" component={Incubate}/>
         <Route exact path="/sceneFeed" component={Feed}/>
-        <Route exact path="/music" component={MusicControl}/>
+        <Route exact path="/sceneMonster" component={Monster}/>
       </div>
     </Router>
   </Provider>
