@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import MusicPlayer from './MusicPlayer'
 import Login from '../utils/login'
 import Eggs from '../config/eggsConfig'
+import MusicPlayer from '../containers/MusicPlayer'
 
 export default class RandomEgg extends Component {
   constructor(props) {

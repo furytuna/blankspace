@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Eggs from '../config/eggsConfig'
-import MusicPlayer from './MusicPlayer'
+import MusicPlayer from '../containers/MusicPlayer'
 
 class Incubate extends Component {
 
