@@ -1,3 +1,5 @@
+import firebase from 'firebase'
+
 class Login {
   static getLocalData() {
     let profile = this.getLocalProfile()
@@ -23,7 +25,7 @@ class Login {
       return JSON.parse(monster)
     }
 
-    return {}
+    return null
   }
 
   static isLoggedIn() {
