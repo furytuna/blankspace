@@ -4,11 +4,13 @@ import Eggs from '../config/eggsConfig'
 import MusicPlayer from './MusicPlayer'
 
 class Incubate extends Component {
+
   render() {
-    let monster = Eggs.Ninja.egg;
+    let monster = this.props.monster.egg;
+    console.log(monster)
     let listOfFood = monster.food.map((food) => {
       return (<li>- {food.desc} {food.require} อัน</li>) ;
-    });
+    })
 
     return (
       <div className="incubate-wrapper container has-text-centered column">

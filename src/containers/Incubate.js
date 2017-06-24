@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
 import Incubate from '../components/Incubate'
-import { setFeedImage } from '../actions/feed'
+import { setMonster } from '../actions/monster'
 
-const mapDispatchToProps = (dispatch) => ({
-  setFeedImage: (payload) => dispatch(setFeedImage(payload))
+const mapStateToProps = (state) => ({
+  monster: state.monster,
+  uid: state.profile.uid
 })
 
-export default connect(null, mapDispatchToProps)(Incubate)
+
+export default connect(mapStateToProps)(Incubate)
