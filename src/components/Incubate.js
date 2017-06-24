@@ -3,15 +3,6 @@ import { Link } from 'react-router-dom'
 import Eggs from '../config/eggsConfig'
 
 class Incubate extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  handleCameraOnChange = (e) => {
-    let file = e.target.files[0];
-    this.props.setFeedImage(URL.createObjectURL(file))
-  }
-
   render() {
     let monster = Eggs.Ninja.egg;
     let listOfFood = monster.food.map((food) => {
@@ -35,6 +26,7 @@ class Incubate extends Component {
             </div>
           </div>
         </div>
+        <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
         <audio autoPlay={true}>
           <source src="../assets/audio/intro.mp3" type="audio/mpeg" />
         </audio>
