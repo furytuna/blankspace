@@ -11,6 +11,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 
+import 'bulma/css/bulma.css'
+import styles from './assets/css/stylesheet.css'
+
 const store = createStore(rootReducer)
 
 var config = {
