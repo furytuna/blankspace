@@ -38,6 +38,8 @@ body {
 }
 
 .prologue-bg {
+	left: 0;
+	right: 0;
 	padding: 0.2em 1.0em 2em 1.0em;
 	height: 430px;
 	position: absolute;
@@ -45,12 +47,16 @@ body {
 }
 
 .prologue-bg.box {
-	width: 100%;
-	max-width: 93vw;
+	width: 95%;
 	opacity: 0.7;
+	margin: 0px auto;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .prologue-content {
+	left: 0;
+	right: 0;
 	padding: 0.2em 1.5em 2em 1.5em;
 	max-height: 430px;
 	overflow: auto;
@@ -85,7 +91,7 @@ body {
 
 .random-egg-content {
 	padding: 0.2em 1.5em 2em 1.5em;
-	max-height: 430px;
+	max-height: 500px;
 	overflow: auto;
 	position: absolute;
 	z-index: 2;
@@ -96,6 +102,49 @@ body {
 	padding-bottom: 16px;
 }
 /* Random Egg */
+
+/* Incubate */
+.incubate-wrapper {
+    background: url(../images/bg_incubate.gif) no-repeat center center fixed;
+}
+
+.incubate-box {
+	height: 250px;
+	width: 100%;
+	position: block;
+}
+
+.incubate-bg {
+	padding: 0.2em 1.0em 2em 1.0em;
+	height: 160px;
+	position: absolute;
+	z-index: 1;
+}
+
+.incubate-detail.box {
+	width: 100%;
+	opacity: 0.7;
+	margin-top: 60px;
+}
+
+.incubate-content {
+	right: 0px;
+	left: 0px;
+	padding: 0.2em 1.5em 2em 1.5em;
+	max-height: 580px;
+	overflow: auto;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+.incubate-egg {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+/* Incubate */
 
 /* Facebook Login */
 .loginBtn {
