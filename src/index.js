@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Prologue from './components/Prologue'
 import RandomEgg from './components/RandomEgg'
-import Incubate from './components/Incubate'
+import Incubate from './containers/Incubate'
+import Feed from './components/Feed'
 import firebase from 'firebase'
 import {
   BrowserRouter as Router,
@@ -35,6 +36,7 @@ const App = () => (
         <Route exact path="/" component={Prologue}/>
         <Route exact path="/sceneRandomEgg" component={RandomEgg}/>
         <Route exact path="/sceneIncubate" component={Incubate}/>
+        <Route exact path="/sceneFeed" component={Feed}/>
       </div>
     </Router>
   </Provider>
