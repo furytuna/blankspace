@@ -153,6 +153,49 @@ body {
 
 /* Incubate */
 
+/* Monster */
+.monster-wrapper {
+    background: url(../images/bg_monster.gif) no-repeat center center fixed;
+}
+
+.monster-box {
+	height: 250px;
+	width: 100%;
+	position: block;
+}
+
+.monster-bg {
+	padding: 0.2em 1.0em 2em 1.0em;
+	height: 160px;
+	position: absolute;
+	z-index: 1;
+}
+
+.monster-detail.box {
+	width: 100%;
+	opacity: 0.5;
+	margin-top: 60px;
+}
+
+.monster-content {
+	right: 0px;
+	left: 0px;
+	padding: 0.2em 1.5em 2em 1.5em;
+	max-height: 580px;
+	overflow: auto;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+.monster-mature {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+/* Monster */
+
 /* Facebook Login */
 .loginBtn {
   box-sizing: border-box;
