@@ -13,8 +13,8 @@ export default class RandomEgg extends Component {
   componentWillMount() {
     let localData = Login.getLocalData()
     console.log(localData)
-    if (!(localData && localData.profile.uid)) {
-      this.setState({ toHome: false })
+    if (!Login.isLoggedIn()) {
+      this.setState({ toHome: true })
     }
   }
 
