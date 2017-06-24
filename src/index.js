@@ -11,6 +11,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 
+import 'bulma/css/bulma.css'
+import styles from './assets/css/stylesheet.css'
+
 const store = createStore(rootReducer)
 
 var config = {
@@ -26,7 +29,7 @@ firebase.initializeApp(config);
 const App = () => (
   <Provider store={store}>
     <Router>
-      <div>
+      <div className="container is-fluid">
         <Route exact path="/" component={Prologue}/>
       </div>
     </Router>
