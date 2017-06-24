@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Register from '../containers/Register'
 import MusicPlayer from '../containers/MusicPlayer'
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Webcam from '../utils/react-webcam'
 import ImageAnalysis from '../utils/react-vision'
 
@@ -24,31 +23,11 @@ export default class Feed extends Component {
   }
 
   analyst = (image) => {
-    let mockFoods = [
-      {
-        name: "sky",
-        desc: "ท้องฟ้า",
-        require: 1
-      },
-      {
-        name: "rock",
-        desc: "หิน",
-        require: 3
-      },
-      {
-        name: "male",
-        desc: "ผู้ชาย",
-        require: 1
-      },
-      {
-        name: "glasses",
-        desc: "แว่นตา",
-        require: 1
-      }
-    ]
+    // let listOfRequiredFoods = this.props.monster.egg.food
+    let listOfRequiredFoods = []
 
     ImageAnalysis.getDataFromImage(image).then((data) => {
-      let matchedImageLabel = mockFoods.filter((food) => {
+      let matchedImageLabel = listOfRequiredFoods.filter((food) => {
         return JSON.parse(data)[0].labelAnnotations.filter((item) => (item.description === food.name)).length > 0
       })
 
@@ -68,7 +47,7 @@ export default class Feed extends Component {
     return (
       <div className="is-center">
         <h1>Feed</h1>
-        {this.state.img === ''? (
+        {this.state.img === '' ? (
           <Webcam
           audio={false}
           height={350}
@@ -76,7 +55,7 @@ export default class Feed extends Component {
           screenshotFormat="image/jpeg"
           width={350}
         />) : (
-        <img src={this.state.img} />
+        <img src={this.state.img} alt="captured images"/>
         )}
         <button onClick={this.capture} className="button is-primary">ให้อาหาร</button>
       </div>
