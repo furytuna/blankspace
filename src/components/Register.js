@@ -7,7 +7,7 @@ class Register extends Component {
     super(props)
     this.provider = new firebase.auth.FacebookAuthProvider()
     this.state = {
-      registered: false
+      registered: props.profile.uid ? true : false
     }
   }
 
