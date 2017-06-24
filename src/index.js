@@ -21,7 +21,7 @@ import Login from './utils/login'
 
 import registerServiceWorker from './registerServiceWorker'
 
-let localData = Login.getLocalData() || { profile: {} }
+let localData = Login.getLocalData()
 let login = Login.isLoggedIn()
 
 const store = createStore(rootReducer, localData, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
