@@ -1,14 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Prologue from './Prologue'
-import Register from './Register'
+import Prologue from './components/Prologue'
 import firebase from 'firebase'
-import reactfire from 'reactfire'
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer)
 
 var config = {
   apiKey: "AIzaSyCTk3XG7Zm_AsSlCxVbiS43kF3DAxMXmoY",
@@ -21,12 +24,13 @@ var config = {
 firebase.initializeApp(config);
 
 const App = () => (
-  <Router>
-    <div>
-      <Route exact path="/" component={Prologue}/>
-      <Route path="/register" component={Register}/>
-    </div>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={Prologue}/>
+      </div>
+    </Router>
+  </Provider>
 )
 
-ReactDOM.render(<App firstName="Lattapon" />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
