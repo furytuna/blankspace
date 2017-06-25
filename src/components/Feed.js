@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import Webcam from '../utils/react-webcam'
 import ImageAnalysis from '../utils/react-vision'
+import SceneSwitcher from '../containers/SceneSwitcher'
 
 export default class Feed extends Component {
   constructor(props) {
@@ -63,7 +64,7 @@ export default class Feed extends Component {
 
     return (
       <div className="is-center">
-        <SceneSwiter accessScene="sceneFeed" />
+        <SceneSwitcher accessScene="sceneFeed" />
         <div className="feed-wrapper container has-text-centered column">
           <div className="feed-box">
             { this.state.result ? (

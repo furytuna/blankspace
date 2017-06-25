@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import Login from '../utils/login'
 import Eggs from '../config/eggsConfig'
 import MusicPlayer from '../containers/MusicPlayer'
-import SceneSwiter from '../containers/SceneSwitcher'
+import SceneSwitcher from '../containers/SceneSwitcher'
 
 export default class RandomEgg extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class RandomEgg extends Component {
   render() {
     return (
       <div className="random-egg-wrapper container has-text-centered column">
-        <SceneSwiter accessScene="sceneRandomEgg" />
+        <SceneSwitcher accessScene="sceneRandomEgg" />
         { this.state.toHome && <Redirect to="/" /> }
         <div className="random-egg-box">
           <div className="random-egg-bg box" />
