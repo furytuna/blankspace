@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Register from '../containers/Register'
 import MusicPlayer from '../containers/MusicPlayer'
 
-export default class Prologue extends Component {
+class Prologue extends Component {
   render() {
     return (
       <div className="prologue-wrapper container has-text-centered column">
@@ -27,3 +27,5 @@ export default class Prologue extends Component {
     )
   }
 }
+
+export default Prologue

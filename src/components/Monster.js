@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import MusicPlayer from './MusicPlayer'
+import SceneSwitcher from '../containers/SceneSwitcher'
 
 class Monster extends Component {
   render() {
     let monster = this.props.monster.mature
     return (
       <div className="monster-wrapper container has-text-centered column">
+        <SceneSwitcher accessScene="sceneMonster" />
         <div className="monster-box">
           <div className="monster-bg" />
           <div className="monster-content">

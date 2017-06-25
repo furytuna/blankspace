@@ -57,6 +57,14 @@ function startApp(baseData) {
 if (localData.profile.uid) {
   firebase.database().ref('users/' + localData.profile.uid).once('value').then((snapshot) => {
     let firebaseData = snapshot.val()
+    for (let key in firebaseData) {
+      let dataToSave = firebaseData[key]
+      if (typeof(firebaseData[key]) == 'object') {
+        localStorage.setItem(key, JSON.stringify(dataToSave))
+      } else {
+        localStorage.setItem(key, dataToSave)
+      }
+    }
     console.log('Firebase data', firebaseData)
     startApp(firebaseData)
   })

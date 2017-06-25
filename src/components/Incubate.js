@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import MusicPlayer from '../containers/MusicPlayer'
+import SceneSwitcher from '../containers/SceneSwitcher'
 
 
 class Incubate extends Component {
@@ -51,6 +52,7 @@ class Incubate extends Component {
 
     return (
       <div className="incubate-wrapper container has-text-centered column">
+        <SceneSwitcher accessScene="sceneIncubate" />
         <div className="incubate-box">
           <div className="incubate-bg" />
           <div className="incubate-content">
