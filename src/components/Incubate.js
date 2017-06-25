@@ -9,7 +9,8 @@ class Incubate extends Component {
     super(props)
     this.state = {
       flashing: false,
-      goToMonster: false
+      goToMonster: false,
+      eggShakingClass: ''
     }
   }
   componentWillUnmount() {
@@ -32,7 +33,8 @@ class Incubate extends Component {
 
   goToMonster = () => {
     this.setState({
-      flashing: true
+      flashing: true,
+      eggShakingClass: 'shaking-egg'
     })
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     if ("vibrate" in navigator) {
@@ -42,15 +44,16 @@ class Incubate extends Component {
       console.log("vibration API not supported")
     }
     setTimeout(() => {
-      this.props.setCurrentScene(this.props.uid, 'sceneMonster')            
+      this.props.setCurrentScene(this.props.uid, 'sceneMonster')
       this.setState({
         goToMonster: true
       })
-    }, 1500);
+    }, 1900);
   }
 
   render() {
     let monster = (this.props.monster) ? this.props.monster.egg : { food: []}
+    let eggImageClass = `incubate-egg ${this.state.eggShakingClass}`
     let listOfFood = monster.food.map((food) => {
       return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
     })
@@ -67,7 +70,7 @@ class Incubate extends Component {
             ) : ('') }
           </div>
           <div className="incubate-content">
-            <div className="incubate-egg">
+            <div className={eggImageClass}>
               <img src={monster.src} alt={monster.name}/>
             </div>
             <div className="incubate-detail box">
@@ -98,9 +101,6 @@ class Incubate extends Component {
               )
             }
             <MusicPlayer name="Incubate"/>
-          </div>
-          <div>
-            <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
           </div>
         </div>
         <div className="incubate-footer"/>
