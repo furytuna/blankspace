@@ -87,6 +87,7 @@ export default class Feed extends Component {
             </ul>
             </div>
           </div>
+          <div className="feed-footer" />
         </div>
       </div>
     )
