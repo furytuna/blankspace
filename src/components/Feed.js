@@ -39,7 +39,7 @@ export default class Feed extends Component {
 
       if (matchedImageLabel.length > 0) {
         let listLabel = matchedImageLabel.map((label) => {
-          this.props.decreateFeedRequirement(this.props.monster.egg.food, label.name)
+          this.props.decreaseFeedRequirement(this.props.profile.uid, label.name)
           return label.desc
         })
 
@@ -63,7 +63,7 @@ export default class Feed extends Component {
 
     return (
       <div className="is-center">
-
+        <SceneSwiter accessScene="sceneFeed" />
         <div className="feed-wrapper container has-text-centered column">
           <div className="feed-box">
             { this.state.result ? (

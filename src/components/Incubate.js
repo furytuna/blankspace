@@ -18,6 +18,16 @@ class Incubate extends Component {
     }
   }
 
+  componentWillUnmount() {
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    if ("vibrate" in navigator) {
+      console.log("vibration API supported")
+      navigator.vibrate([500, 300, 100]);
+    } else {
+      console.log("vibration API not supported")
+    }
+  }
+
   render() {
     let monster = this.props.monster.egg;
     let listOfFood = monster.food.map((food) => {
@@ -26,6 +36,7 @@ class Incubate extends Component {
 
     return (
       <div className="incubate-wrapper container has-text-centered column">
+        <SceneSwiter accessScene="sceneIncubate" />
         <div className="incubate-box">
           <div className="incubate-content">
             { this.props.flashMessage ? (
@@ -46,7 +57,13 @@ class Incubate extends Component {
               </ul>
             </div>
             <div>
-              <Link to="/sceneFeed" className="button is-primary">ให้อาหาร</Link>
+              {
+                this.props.monster.currentState === 'egg' ? (
+                  <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
+                ) : (
+                  <Link to='/sceneMonster' className="button is-primary">ฟักไข่</Link>
+                )
+              }
             </div>
           </div>
           <div>

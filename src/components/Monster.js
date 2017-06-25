@@ -3,11 +3,10 @@ import MusicPlayer from './MusicPlayer'
 
 class Monster extends Component {
   render() {
-    let monster = this.props.monster
-    console.log('Monster', this.props.monster)
-    console.log('currentMonsterState', this.props.currentMonsterState)
+    let monster = this.props.monster.mature
     return (
       <div className="monster-wrapper container has-text-centered column">
+        <SceneSwiter accessScene="sceneMonster" />
         <div className="monster-box">
           <div className="monster-bg" />
           <div className="monster-content">
