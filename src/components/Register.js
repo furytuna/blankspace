@@ -25,7 +25,7 @@ class Register extends Component {
     return(
       <div>
         {this.props.profile.uid ? 
-        (<Link to='/sceneRandomEgg' className="button is-primary">เล่นต่อ</Link>) : 
+        (<Link to={this.props.currentScene} className="button is-primary">เล่นต่อ</Link>) : 
         (<button onClick={this.loginWithFacebook} className="loginBtn loginBtn-facebook">Login with Facebook</button>)
         }
       </div>
