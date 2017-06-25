@@ -21,6 +21,9 @@ export default class RandomEgg extends Component {
   }
 
   componentWillUnmount() {
+    if (this.props.currentScene === 'sceneRandomEgg') {
+      this.props.setCurrentScene(this.props.uid, 'sceneIncubate')
+    }
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     if ("vibrate" in navigator) {
       console.log("vibration API supported")

@@ -7,5 +7,5 @@ const setCurrentScene = (uid, scene) => ({
 })
 
 export {
-  setProfile
+  setCurrentScene
 }
