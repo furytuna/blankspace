@@ -54,7 +54,13 @@ class Incubate extends Component {
       <div className="incubate-wrapper container has-text-centered column">
         <SceneSwitcher accessScene="sceneIncubate" />
         <div className="incubate-box">
-          <div className="incubate-bg" />
+          <div className="incubate-content">
+            { this.props.flashMessage ? (
+              <div className="incubate-egg-flash box">
+                { this.props.flashMessage }
+              </div>
+            ) : ('') }
+          </div>
           <div className="incubate-content">
             <div className="incubate-egg">
               <img src={monster.src} alt={monster.name}/>
@@ -66,22 +72,33 @@ class Incubate extends Component {
                 { listOfFood }
               </ul>
             </div>
+            <div>
+              { this.props.monster.currentState === 'egg' ? (
+                <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
+              ) : (
+                <button onClick={this.goToMonster} className="button is-primary">ฟักไข่</button>
+              ) }
+
+              { this.state.goToMonster ? (
+                <Redirect to='/sceneMonster' className="button is-primary" />
+              ) : ('') }
+            </div>
+          </div>
+          <div>
+            {
+              this.state.flashing ? (
+                <div className="flash"></div>
+              ) : (
+                ''
+              )
+            }
+            <MusicPlayer name="Incubate"/>
+          </div>
+          <div>
+            <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
           </div>
         </div>
-        {this.props.flashMessage ? (
-          <div>{this.props.flashMessage}</div>
-        ):('')}
-        {this.props.monster.currentState === 'egg'?
-        (<Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>) :
-        (<button onClick={this.goToMonster} className="button is-primary">ฟักไข่</button>)
-        }
-        {this.state.goToMonster?
-        (<Redirect to='/sceneMonster' className="button is-primary" />) : ''
-        }
-        <MusicPlayer name="Incubate"/>
-        {this.state.flashing?
-        (<div className="flash"></div>):''
-        }
+        <div className="incubate-footer"/>
       </div>
     )
   }

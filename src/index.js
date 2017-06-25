@@ -59,7 +59,7 @@ if (localData.profile.uid) {
     let firebaseData = snapshot.val()
     for (let key in firebaseData) {
       let dataToSave = firebaseData[key]
-      if (typeof(firebaseData[key]) == 'object') {
+      if (typeof(firebaseData[key]) === 'object') {
         localStorage.setItem(key, JSON.stringify(dataToSave))
       } else {
         localStorage.setItem(key, dataToSave)

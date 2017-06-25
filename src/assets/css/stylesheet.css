@@ -75,8 +75,8 @@ body {
 
 /* Random Egg */
 .random-egg-wrapper {
-    background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
-		height: 100vh;
+  background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
+	height: 100vh;
 }
 
 .random-egg-box {
@@ -116,7 +116,7 @@ body {
 
 /* Incubate */
 .incubate-wrapper {
-    background: url(../images/bg_incubate.gif) no-repeat center center fixed;
+  background: url(../images/bg_incubate.gif) no-repeat center center fixed;
 }
 
 .incubate-box {
@@ -124,17 +124,25 @@ body {
 	width: 100%;
 }
 
-.incubate-bg {
-	padding: 0.2em 1.0em 2em 1.0em;
-	height: 160px;
-	position: absolute;
-	z-index: 1;
+.incubate-footer {
+	height: 250px;
+	width: 100%
 }
 
 .incubate-detail.box {
 	width: 100%;
 	opacity: 0.5;
 	margin-top: 45px;
+}
+
+.incubate-egg-flash.box {
+	position: relative;
+	opacity: 0.5;
+	width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding-bottom: -40px;
 }
 
 .incubate-list-food {
@@ -148,7 +156,6 @@ body {
 	padding: 0.2em 1.5em 2em 1.5em;
 	max-height: 580px;
 	overflow: auto;
-	position: absolute;
 	z-index: 2;
 	width: 100%;
 }
@@ -160,6 +167,63 @@ body {
 }
 
 /* Incubate */
+
+/* Feed */
+.feed-wrapper {
+  background: url(../images/bg_incubate.gif) no-repeat center center fixed;
+	height: 100vh;
+}
+
+.feed-box {
+	height: 500px;
+	width: 100%;
+}
+
+.feed-bg {
+	padding: 0.2em 1.0em 2em 1.0em;
+	height: 160px;
+	position: absolute;
+	z-index: 1;
+}
+
+.feed-detail.box {
+	width: 100%;
+	opacity: 0.5;
+	margin-top: 45px;
+}
+
+/*.feed-camera.box {
+	opacity: 0.5;
+}*/
+
+.feed-camera.box button{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.feed-list-food {
+	max-height: 80px;
+	overflow: auto;
+}
+
+.feed-content {
+	right: 0px;
+	left: 0px;
+	padding: 0.2em 1.5em 2em 1.5em;
+	max-height: 580px;
+	overflow: auto;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+/*.feed-egg {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+}*/
+
+/* Feed */
 
 /* Monster */
 .monster-wrapper {
@@ -302,7 +366,6 @@ body {
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
 /* Facebook Share */
-
 
 .musicplayer-container {
   padding: 20px;

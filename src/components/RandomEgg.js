@@ -52,7 +52,7 @@ export default class RandomEgg extends Component {
           </div>
         </div>
         <Link to='/sceneIncubate' className="button is-primary">สุ่ม Tunagotchi</Link>
-        <MusicPlayer name="RandomEgg"/>
+        // <MusicPlayer name="RandomEgg"/>
       </div>
     )
   }
