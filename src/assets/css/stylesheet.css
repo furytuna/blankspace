@@ -216,46 +216,52 @@ body {
 }
 
 .monster-box {
-	height: 250px;
+	height: 580px;
 	width: 100%;
 }
 
-.monster-bg {
-	padding: 0.2em 1.0em 2em 1.0em;
-	height: 160px;
-	z-index: 1;
+.monster-footer {
+	width: 100%
 }
 
 .monster-detail.box {
 	width: 100%;
 	opacity: 0.5;
-	margin-top: 60px;
+}
+
+.monster-egg-flash.box {
+	position: relative;
+	opacity: 0.5;
+	width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding-bottom: -40px;
+}
+
+.monster-list-food {
+	max-height: 80px;
+	overflow: auto;
 }
 
 .monster-content {
 	right: 0px;
 	left: 0px;
 	padding: 0.2em 1.5em 2em 1.5em;
-	max-height: 580px;
-	overflow: auto;
-	position: absolute;
-	z-index: 2;
 	width: 100%;
 }
 
-.monster-mature {
+.monster-egg {
 	width: 200px;
 	height: 200px;
 	margin: 0px auto;
 }
-
 /* Monster */
 
 /* Facebook Login */
 .loginBtn {
   box-sizing: border-box;
   position: relative;
-  /* width: 13em;  - apply for fixed size */
   margin: 0.2em;
   padding: 0 15px 0 46px;
   border: none;
