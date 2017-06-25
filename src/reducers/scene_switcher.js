@@ -1,7 +1,7 @@
 import { SET_CURRENT_SCENE } from '../actions/types'
 import firebase from 'firebase'
 
-const initialState = null
+const initialState = "sceneRandomEgg"
 
 const sceneSwitcherReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -35,8 +35,7 @@ class Login {
     if (currentScene) {
       return currentScene
     }
-
-    return null
+    return 'sceneRandomEgg'
   }
 
   static getLocalMusicPlayer() {

@@ -370,3 +370,31 @@ body {
 .musicplayer-container {
   padding: 20px;
 }
+
+
+.flash {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	-webkit-animation-name: flashing;
+	-webkit-animation-duration: 5000ms;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-out;
+	background-color: white;
+	opacity: 0;
+	z-index: 99999;
+}
+
+@-webkit-keyframes flashing {
+    0% {
+			opacity: 0;
+    }
+		20% {
+			opacity: 1;
+		}
+    100% {
+      opacity:1;
+    }
+}
