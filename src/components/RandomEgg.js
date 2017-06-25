@@ -16,7 +16,7 @@ export default class RandomEgg extends Component {
       let monster = Eggs[keys[random_key_number]]
       props.setMonster(props.uid, monster)
     }
-    
+
   }
 
   componentWillUnmount() {
@@ -39,14 +39,13 @@ export default class RandomEgg extends Component {
   }
 
   render() {
-    console.log(this.state.toHome);
     return (
       <div className="random-egg-wrapper container has-text-centered column">
         { this.state.toHome && <Redirect to="/" /> }
         <div className="random-egg-box">
           <div className="random-egg-bg box" />
           <div className="random-egg-content">
-              <h1 className="title"><b>เลือก "TunaGotchi" คู่กาย</b></h1>
+              <h1 className="title"><b>เลือก "Tunagotchi" คู่กาย</b></h1>
               Tunagotchi ตัวนี้จะคอยติดตามคุณไปทุกที่
               มันจะร่วมต่อสู้และผจญภัยไปคุณ
           </div>

@@ -45,7 +45,7 @@ class Incubate extends Component {
             <div className="incubate-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>
               <h1><b>รายการอาหาร</b></h1>
-              <ul className="has-text-left">
+              <ul className="incubate-list-food has-text-left">
                 { listOfFood }
               </ul>
             </div>

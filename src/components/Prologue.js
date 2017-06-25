@@ -19,7 +19,7 @@ export default class Prologue extends Component {
               แต่ความหวังยังคงมี กลุ่ม Programmer โลกเก่าได้ตั้งตัวขึ้นอย่างลับๆ
               คอยเสาะหาผู้กล้าเพื่อมาต่อกรและโค่นล้ม Veda
               โดยกุญแจสำคัญคือแผงวงจรเกมในตำนานที่มีชื่อว่า ...
-              <h1 className="title"><b>"TunaGotchi"</b></h1>
+              <h1 className="title"><b>"Tunagotchi"</b></h1>
           </div>
         </div>
         {this.props.profile?
