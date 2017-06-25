@@ -12,6 +12,11 @@
 
 body {
   font-family: 'RD CHULAJARUEK';
+	background-color: black;
+}
+
+#root {
+	height: 100vh;
 }
 
 .title {
@@ -69,6 +74,7 @@ body {
 .random-egg-wrapper {
   background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
 	background-size: cover;
+	height: 100vh;
 }
 
 .random-egg-box {
