@@ -74,7 +74,6 @@ body {
 .random-egg-box {
 	height: 250px;
 	width: 100%;
-	position: block;
 }
 
 .random-egg-bg {
@@ -212,19 +211,19 @@ body {
 
 /* Monster */
 .monster-wrapper {
-    background: url(../images/bg_monster.gif) no-repeat center center fixed;
+  background: url(../images/bg_monster.gif) no-repeat center center fixed;
+	background-size: cover;
+	height: 100vh;
 }
 
 .monster-box {
 	height: 250px;
 	width: 100%;
-	position: block;
 }
 
 .monster-bg {
 	padding: 0.2em 1.0em 2em 1.0em;
 	height: 160px;
-	position: absolute;
 	z-index: 1;
 }
 

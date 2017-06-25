@@ -42,7 +42,7 @@ class Incubate extends Component {
       console.log("vibration API not supported")
     }
     setTimeout(() => {
-      this.props.setCurrentScene(this.props.uid, 'sceneMonster')            
+      this.props.setCurrentScene(this.props.uid, 'sceneMonster')
       this.setState({
         goToMonster: true
       })
@@ -98,9 +98,6 @@ class Incubate extends Component {
               )
             }
             <MusicPlayer name="Incubate"/>
-          </div>
-          <div>
-            <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
           </div>
         </div>
         <div className="incubate-footer"/>
