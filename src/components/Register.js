@@ -32,7 +32,7 @@ class Register extends Component {
         {this.state.registered ? (
           <Redirect to="/sceneRandomEgg" />
         ) : (
-          <button onClick={this.loginWithFacebook} className="button is-primary">Login with Facebook</button>
+          <button onClick={this.loginWithFacebook} className="loginBtn loginBtn--facebook">Login with Facebook</button>
         )}
       </div>
     )

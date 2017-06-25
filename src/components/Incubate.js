@@ -35,7 +35,7 @@ class Incubate extends Component {
             <div className="incubate-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>
               <h1><b>รายการอาหาร</b></h1>
-              <ul className="has-text-left">
+              <ul className="incubate-list-food has-text-left">
                 { listOfFood }
               </ul>
             </div>
@@ -44,9 +44,9 @@ class Incubate extends Component {
         {this.props.flashMessage ? (
           <div>{this.props.flashMessage}</div>
         ):('')}
-        <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
+        <Link to="/sceneFeed" className="button is-primary">ให้อาหาร</Link>
         <MusicPlayer name="Incubate"/>
-        <a onClick={this.share}>Share</a>
+        <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
       </div>
     )
   }
