@@ -33,16 +33,14 @@ class MusicPlayer extends Component {
   }
 
   render() {
-    return(
-      // <footer className="footer">
-        <div className="container musicplayer-container">
-          <div className="content has-text-centered">
-            <a className="is-danger is-inverted is-outlined" onClick={this.props.music_player === "PLAY" ? this.pauseSong : this.playSong}>
-              Music { this.props.music_player === "PLAY" ? "On" : "Off" }
-            </a>
-          </div>
+    return (
+      <div className="container musicplayer-container">
+        <div className="content has-text-centered">
+          <a className="is-danger is-inverted is-outlined" onClick={this.props.music_player === "PLAY" ? this.pauseSong : this.playSong}>
+            Music { this.props.music_player === "PLAY" ? "On" : "Off" }
+          </a>
         </div>
-      // </footer>
+      </div>
     )
   }
 }

@@ -7,7 +7,8 @@ export default class Feed extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      img: ''
+      img: '',
+      result: false
     }
   }
   setRef = (webcam) => {
@@ -26,6 +27,7 @@ export default class Feed extends Component {
 
   analyzeImage = (image) => {
     let listOfRequiredFoods = this.props.monster.egg.food
+    let flashMessage = ''
 
     ImageAnalysis.getDataFromImage(image).then((data) => {
       let matchedImageLabel = listOfRequiredFoods.filter((food) => {
@@ -35,8 +37,6 @@ export default class Feed extends Component {
         return resultLabel || resultWeb
       })
 
-      let flashMessage = ''
-
       if (matchedImageLabel.length > 0) {
         let listLabel = matchedImageLabel.map((label) => {
           this.props.decreateFeedRequirement(this.props.monster.egg.food, label.name)
@@ -44,11 +44,11 @@ export default class Feed extends Component {
         })
 
         flashMessage = `ให้อาหาร ${listLabel.join()} แล้ว จย้าา~!!`
-        this.props.setFlashMessage(flashMessage)
       } else {
         flashMessage = 'ไม่เจออาหาร จย้าา~!'
-        this.props.setFlashMessage(flashMessage)
       }
+
+      this.props.setFlashMessage(flashMessage)
       this.setState({
         result: true
       })
@@ -56,27 +56,37 @@ export default class Feed extends Component {
   }
 
   render() {
+    let monster = this.props.monster.egg;
+    let listOfFood = monster.food.map((food) => {
+      return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
+    })
+
     return (
       <div className="is-center">
-        <h1>Feed</h1>
-        <div>
-        {
-          this.state.img === '' ? (
-            <Webcam
-            audio={false}
-            height={350}
-            ref={this.setRef}
-            screenshotFormat="image/jpeg"
-            width={350}
-          />) : (
-          <img src={this.state.img} alt="captured images"/>
-          )
-        }
-        {this.state.result? (
-          <Redirect to='/sceneIncubate' />
-        ):('')}
+
+        <div className="feed-wrapper container has-text-centered column">
+          <div className="feed-box">
+            { this.state.result ? (
+              <div className="feed-picture box">
+                <img src={this.state.img} alt="captured images"/>
+                <Redirect to='/sceneIncubate' />
+              </div>
+            ) : (
+              <div className="feed-camera box">
+                <Webcam audio={false} height={350} width={350} ref={this.setRef} screenshotFormat="image/jpeg" />
+                <div>
+                  <button onClick={this.capture} className="button is-primary">ให้อาหาร</button>
+                </div>
+              </div>
+            ) }
+            <div className="feed-detail box">
+            <h1><b>รายการอาหาร</b></h1>
+            <ul className="feed-list-food has-text-left">
+              { listOfFood }
+            </ul>
+            </div>
+          </div>
         </div>
-        <button onClick={this.capture} className="button is-primary">ให้อาหาร</button>
       </div>
     )
   }

@@ -27,7 +27,13 @@ class Incubate extends Component {
     return (
       <div className="incubate-wrapper container has-text-centered column">
         <div className="incubate-box">
-          <div className="incubate-bg" />
+          <div className="incubate-content">
+            { this.props.flashMessage ? (
+              <div className="incubate-egg-flash box">
+                { this.props.flashMessage }
+              </div>
+            ) : ('') }
+          </div>
           <div className="incubate-content">
             <div className="incubate-egg">
               <img src={monster.src} alt={monster.name}/>
@@ -39,14 +45,18 @@ class Incubate extends Component {
                 { listOfFood }
               </ul>
             </div>
+            <div>
+              <Link to="/sceneFeed" className="button is-primary">ให้อาหาร</Link>
+            </div>
+          </div>
+          <div>
+            <MusicPlayer name="Incubate"/>
+          </div>
+          <div>
+            <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
           </div>
         </div>
-        {this.props.flashMessage ? (
-          <div>{this.props.flashMessage}</div>
-        ):('')}
-        <Link to="/sceneFeed" className="button is-primary">ให้อาหาร</Link>
-        <MusicPlayer name="Incubate"/>
-        <button onClick={this.share} className="loginBtn loginBtn--facebook">Share</button>
+        <div className="incubate-footer"/>
       </div>
     )
   }
