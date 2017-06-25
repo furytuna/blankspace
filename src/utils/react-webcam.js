@@ -118,7 +118,7 @@ export default class Webcam extends Component {
 
     const sourceSelected = (audioSource, videoSource) => {
       // Prefer camera resolution nearest to 1280x720.
-      var constraints = { audio: true, video: { width: 350, height: 350, facingMode: { exact: "environment" } } };
+      var constraints = { audio: false, video: { width: 350, height: 350, facingMode: "environment"}};
 
       navigator.mediaDevices.getUserMedia(constraints)
         .then(function (mediaStream) {
