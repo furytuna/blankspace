@@ -16,8 +16,7 @@ class Monster extends Component {
             </div>
             <div className="monster-detail box">
               <h1 className="title is-4"><b>{monster.name}</b></h1>
-              <h1><b>ความเป็นมา</b></h1>
-              <p></p>
+              <p>{monster.history}</p>
             </div>
           </div>
         </div>

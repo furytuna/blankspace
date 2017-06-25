@@ -16,12 +16,9 @@ class SceneSwitcher extends Component {
   }
 
   render() {
-    console.log('Access scene', this.props.accessScene)
-    console.log('Current scene', this.props.currentScene)
     return (
       <div>
         {this.state.willRedirect && <Redirect to={`/${this.props.currentScene}`} />}
-        Scene switcher component
       </div>
     )
   }
