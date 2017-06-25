@@ -57,6 +57,7 @@ export default class Feed extends Component {
   render() {
     return (
       <div className="is-center">
+        <SceneSwiter accessScene="sceneFeed" />
         <h1>Feed</h1>
         <div>
         {

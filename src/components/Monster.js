@@ -6,6 +6,7 @@ class Monster extends Component {
     let monster = this.props.monster.mature
     return (
       <div className="monster-wrapper container has-text-centered column">
+        <SceneSwiter accessScene="sceneMonster" />
         <div className="monster-box">
           <div className="monster-bg" />
           <div className="monster-content">

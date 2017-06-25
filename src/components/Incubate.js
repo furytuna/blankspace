@@ -36,6 +36,7 @@ class Incubate extends Component {
 
     return (
       <div className="incubate-wrapper container has-text-centered column">
+        <SceneSwiter accessScene="sceneIncubate" />
         <div className="incubate-box">
           <div className="incubate-bg" />
           <div className="incubate-content">
