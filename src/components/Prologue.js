@@ -7,8 +7,8 @@ class Prologue extends Component {
     return (
       <div className="prologue-wrapper container has-text-centered column">
         <div className="prologue-box">
-          <div className="prologue-bg box" />
-          <div className="prologue-content">
+          <div className="prologue-bg box">
+            <div className="prologue-content">
               <h1 className="title">ค.ศ. 2504</h1>
               โลกอนาคตถูกครอบงำด้วย Veda, AI อันทรงพลัง
               การเข้ามาอย่างเต็มที่ของ Machine Learning ในปี 2017 นั้น
@@ -19,10 +19,14 @@ class Prologue extends Component {
               คอยเสาะหาผู้กล้าเพื่อมาต่อกรและโค่นล้ม Veda
               โดยกุญแจสำคัญคือแผงวงจรเกมในตำนานที่มีชื่อว่า ...
               <h1 className="title"><b>"Tunagotchi"</b></h1>
+            </div>
           </div>
         </div>
-        <Register />
+        <div className="prologue-login">
+          <Register />
+        </div>
         <MusicPlayer name="Prologue"/>
+        <div className="prologue-footer"/>
       </div>
     )
   }

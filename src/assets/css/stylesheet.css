@@ -34,49 +34,40 @@ body {
   background: url(../images/bg_prologue.gif) no-repeat center center fixed;
 }
 
-.prologue-box {
-	height: 480px;
-	width: 100%;
-	position: block;
-}
-
 .prologue-bg {
 	left: 0;
 	right: 0;
-	padding: 0.2em 1.0em 2em 1.0em;
-	height: 430px;
-	position: absolute;
-	z-index: 1;
 }
 
 .prologue-bg.box {
-	width: 95%;
-	opacity: 0.1;
-	margin: 0px auto;
-	padding-left: 10px;
-	padding-right: 10px;
+	background-color:rgba(0, 0, 0, 0.2);
 }
 
 .prologue-content {
 	left: 0;
 	right: 0;
 	padding: 0.2em 1.5em 2em 1.5em;
-	max-height: 430px;
-	overflow: auto;
-	position: absolute;
-	z-index: 2;
   color: #ffffff;
 }
 
 .prologue-content h1 {
   color: #ffffff;
 }
+
+.prologue-footer {
+	height: 30px;
+	width: 100%
+}
+
+.prologue-login {
+	margin-top: 10px;
+}
 /* Prologue */
 
 /* Random Egg */
 .random-egg-wrapper {
-    background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
-		height: 100vh;
+  background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
+	height: 100vh;
 }
 
 .random-egg-box {
@@ -116,7 +107,7 @@ body {
 
 /* Incubate */
 .incubate-wrapper {
-    background: url(../images/bg_incubate.gif) no-repeat center center fixed;
+  background: url(../images/bg_incubate.gif) no-repeat center center fixed;
 }
 
 .incubate-box {
@@ -124,17 +115,25 @@ body {
 	width: 100%;
 }
 
-.incubate-bg {
-	padding: 0.2em 1.0em 2em 1.0em;
-	height: 160px;
-	position: absolute;
-	z-index: 1;
+.incubate-footer {
+	height: 250px;
+	width: 100%
 }
 
 .incubate-detail.box {
 	width: 100%;
 	opacity: 0.5;
 	margin-top: 45px;
+}
+
+.incubate-egg-flash.box {
+	position: relative;
+	opacity: 0.5;
+	width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding-bottom: -40px;
 }
 
 .incubate-list-food {
@@ -148,7 +147,6 @@ body {
 	padding: 0.2em 1.5em 2em 1.5em;
 	max-height: 580px;
 	overflow: auto;
-	position: absolute;
 	z-index: 2;
 	width: 100%;
 }
@@ -160,6 +158,57 @@ body {
 }
 
 /* Incubate */
+
+/* Feed */
+.feed-wrapper {
+  background: url(../images/bg_incubate.gif) no-repeat center center fixed;
+	height: 100vh;
+}
+
+.feed-box {
+	height: 500px;
+	width: 100%;
+}
+
+.feed-bg {
+	padding: 0.2em 1.0em 2em 1.0em;
+	height: 160px;
+	position: absolute;
+	z-index: 1;
+}
+
+.feed-detail.box {
+	width: 100%;
+	opacity: 0.5;
+	margin-top: 45px;
+}
+
+/*.feed-camera.box {
+	opacity: 0.5;
+}*/
+
+.feed-camera.box button{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.feed-list-food {
+	max-height: 80px;
+	overflow: auto;
+}
+
+.feed-content {
+	right: 0px;
+	left: 0px;
+	padding: 0.2em 1.5em 2em 1.5em;
+	max-height: 580px;
+	overflow: auto;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+/* Feed */
 
 /* Monster */
 .monster-wrapper {
@@ -218,6 +267,7 @@ body {
   border-radius: 0.2em;
   font-size: 16px;
   color: #FFF;
+	height: 32px;
 }
 .loginBtn:before {
   content: "";
@@ -293,7 +343,7 @@ body {
 }
 .loginBtn--facebook:before {
   border-right: #364e92 1px solid;
-  background: url(../images/icon_facebook.png) 4px 4px no-repeat;
+  background: url(../images/icon_facebook.png) 4px 8px no-repeat;
 	background-size: 16px
 }
 .loginBtn--facebook:hover,
@@ -302,7 +352,6 @@ body {
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
 /* Facebook Share */
-
 
 .musicplayer-container {
   padding: 20px;
