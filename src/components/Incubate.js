@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import MusicPlayer from '../containers/MusicPlayer'
 
 
 class Incubate extends Component {
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      flashing: false,
+      goToMonster: false
+    }
+  }
   share() {
     if (navigator.share) {
       navigator.share({
@@ -18,7 +24,11 @@ class Incubate extends Component {
     }
   }
 
-  componentWillUnmount() {
+  goToMonster = () => {
+    console.log("gotomonster")
+    this.setState({
+      flashing: true
+    })
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     if ("vibrate" in navigator) {
       console.log("vibration API supported")
@@ -26,6 +36,11 @@ class Incubate extends Component {
     } else {
       console.log("vibration API not supported")
     }
+    setTimeout(() => {
+      this.setState({
+        goToMonster: true
+      })
+    }, 1500);
   }
 
   render() {
@@ -56,9 +71,15 @@ class Incubate extends Component {
         ):('')}
         {this.props.monster.currentState === 'egg'?
         (<Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>) :
-        (<Link to='/sceneMonster' className="button is-primary">ฟักไข่</Link>)
+        (<button onClick={this.goToMonster} className="button is-primary">ฟักไข่</button>)
+        }
+        {this.state.goToMonster?
+        (<Redirect to='/sceneMonster' className="button is-primary" />) : ''
         }
         <MusicPlayer name="Incubate"/>
+        {this.state.flashing?
+        (<div className="flash"></div>):''
+        }
       </div>
     )
   }
