@@ -18,6 +18,16 @@ class Incubate extends Component {
     }
   }
 
+  componentWillUnmount() {
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    if ("vibrate" in navigator) {
+      console.log("vibration API supported")
+      navigator.vibrate([500, 300, 100]);
+    } else {
+      console.log("vibration API not supported")
+    }
+  }
+
   render() {
     let monster = this.props.monster.egg;
     let listOfFood = monster.food.map((food) => {
@@ -44,9 +54,11 @@ class Incubate extends Component {
         {this.props.flashMessage ? (
           <div>{this.props.flashMessage}</div>
         ):('')}
-        <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
+        {this.props.monster.currentState === 'egg'?
+        (<Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>) :
+        (<Link to='/sceneMonster' className="button is-primary">ฟักไข่</Link>)
+        }
         <MusicPlayer name="Incubate"/>
-        <a onClick={this.share}>Share</a>
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Register from '../containers/Register'
 import MusicPlayer from '../containers/MusicPlayer'
 
@@ -21,7 +22,10 @@ export default class Prologue extends Component {
               <h1 className="title"><b>"TunaGotchi"</b></h1>
           </div>
         </div>
-        <Register />
+        {this.props.profile?
+        (<Link to={this.props.currentScene}>เล่นต่อ</Link>) :
+        (<Register />)
+        }
         <MusicPlayer name="Prologue"/>
       </div>
     )

@@ -39,13 +39,12 @@ export default class Feed extends Component {
 
       if (matchedImageLabel.length > 0) {
         let listLabel = matchedImageLabel.map((label) => {
-          this.props.decreateFeedRequirement(this.props.monster.egg.food, label.name)
+          this.props.decreaseFeedRequirement(this.props.profile.uid, label.name)
           return label.desc
         })
 
         flashMessage = `ให้อาหาร ${listLabel.join()} แล้ว จย้าา~!!`
-        this.props.setFlashMessage(flashMessage)
-      } else {
+        this.props.setFlashMessage(flashMessage)      } else {
         flashMessage = 'ไม่เจออาหาร จย้าา~!'
         this.props.setFlashMessage(flashMessage)
       }

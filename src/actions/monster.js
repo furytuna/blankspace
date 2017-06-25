@@ -1,4 +1,4 @@
-import { SET_MONSTER } from './types'
+import { SET_MONSTER, DECREASE_FEED_REQUIREMENT } from './types'
 
 const setMonster = (uid, monster) => ({
   type: SET_MONSTER,
@@ -6,6 +6,13 @@ const setMonster = (uid, monster) => ({
   monster: monster
 })
 
+const decreaseFeedRequirement = (uid, foodName) => ({
+  type: DECREASE_FEED_REQUIREMENT,
+  uid: uid,
+  foodName: foodName
+})
+
 export {
-  setMonster
+  setMonster,
+  decreaseFeedRequirement
 }
