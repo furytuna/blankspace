@@ -3,7 +3,8 @@ import Register from '../components/Register'
 import { setProfile } from '../actions/profile'
 
 const mapStateToProps = (state) => ({
-  profile: state.profile
+  profile: state.profile,
+  currentScene: state.currentScene
 })
 
 const mapDispatchToProps = (dispatch) => ({
