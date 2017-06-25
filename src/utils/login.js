@@ -2,9 +2,13 @@ class Login {
   static getLocalData() {
     let profile = this.getLocalProfile()
     let monster = this.getLocalMonster()
+    let currentScene = this.getLocalCurrentScene()
+    let music_player = this.getLocalMusicPlayer()
     return {
       profile: profile,
-      monster: monster
+      monster: monster,
+      currentScene: currentScene,
+      music_player: music_player
     }
   }
 
@@ -24,6 +28,24 @@ class Login {
     }
 
     return null
+  }
+
+  static getLocalCurrentScene() {
+    let currentScene = localStorage.getItem('currentScene')
+    if (currentScene) {
+      return currentScene
+    }
+
+    return null
+  }
+
+  static getLocalMusicPlayer() {
+    let music_player = localStorage.getItem('music_player')
+    if (music_player) {
+      return music_player
+    }
+
+    return 'PLAY'
   }
 
   static isLoggedIn() {

@@ -4,13 +4,15 @@ import monsterReducer from './monster'
 import feedReducer from './feed'
 import musicReducer from './music_player'
 import flashMessageReducer from './flash_message'
+import sceneSwitcherReducer from './scene_switcher'
 
 const rootReducer = combineReducers({
   profile: profileReducer,
   monster: monsterReducer,
   feed: feedReducer,
   music_player: musicReducer,
-  flash_message: flashMessageReducer
+  flash_message: flashMessageReducer,
+  currentScene: sceneSwitcherReducer
 })
 
 export default rootReducer
