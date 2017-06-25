@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import Webcam from '../utils/react-webcam'
 import ImageAnalysis from '../utils/react-vision'
 import SceneSwitcher from '../containers/SceneSwitcher'
+import Spinner from 'react-spin';
 
 export default class Feed extends Component {
   constructor(props) {
@@ -20,13 +21,17 @@ export default class Feed extends Component {
     const imageSrc = this.webcam.getScreenshot()
     this.setState({
       img: imageSrc,
-      result: null
+      result: null,
+      fetching: false
     })
 
     this.analyzeImage(imageSrc)
   }
 
   analyzeImage = (image) => {
+    this.setState({
+      fetching: true
+    })
     let listOfRequiredFoods = this.props.monster.egg.food
     let flashMessage = ''
 
@@ -51,7 +56,8 @@ export default class Feed extends Component {
       this.props.setFlashMessage(flashMessage)
       this.props.setCurrentScene(this.props.profile.uid, 'sceneIncubate')
       this.setState({
-        result: true
+        result: true,
+        fetching: false
       })
     })
   }
@@ -61,16 +67,21 @@ export default class Feed extends Component {
     let listOfFood = monster.food.map((food) => {
       return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
     })
-
+    let spinConfig = {
+      width: 12,
+      radius: 35,
+      length: 20,
+      top: '25%',
+      color: '#f0f0f0'
+    }
     return (
       <div className="is-center">
         <SceneSwitcher accessScene="sceneFeed" />
         <div className="feed-wrapper container has-text-centered column">
           <div className="feed-box">
-            { this.state.result ? (
+            { this.state.img ? (
               <div className="feed-picture box">
                 <img src={this.state.img} alt="captured images"/>
-                <Redirect to='/sceneIncubate' />
               </div>
             ) : (
               <div className="feed-camera box">
@@ -80,6 +91,10 @@ export default class Feed extends Component {
                 </div>
               </div>
             ) }
+            { this.state.result ?
+            (<Redirect to='/sceneIncubate' />):''
+            }
+            
             <div className="feed-detail box">
             <h1><b>รายการอาหาร</b></h1>
             <ul className="feed-list-food has-text-left">
@@ -89,6 +104,9 @@ export default class Feed extends Component {
           </div>
           <div className="feed-footer" />
         </div>
+        {this.state.fetching ?
+        (<Spinner config={spinConfig} />):''
+        }
       </div>
     )
   }

@@ -53,6 +53,7 @@ class Incubate extends Component {
 
   render() {
     let monster = (this.props.monster) ? this.props.monster.egg : { food: []}
+    let currentState = (this.props.monster) ? this.props.monster.currentState : 'egg'
     let eggImageClass = `incubate-egg ${this.state.eggShakingClass}`
     let listOfFood = monster.food.map((food) => {
       return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
@@ -81,7 +82,7 @@ class Incubate extends Component {
               </ul>
             </div>
             <div>
-              { this.props.monster.currentState === 'egg' ? (
+              { currentState === 'egg' ? (
                 <Link to='/sceneFeed' className="button is-primary">ให้อาหาร</Link>
               ) : (
                 <button onClick={this.goToMonster} className="button is-primary">ฟักไข่</button>
