@@ -21,13 +21,15 @@ export default class RandomEgg extends Component {
   }
 
   componentWillUnmount() {
-    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-    if ("vibrate" in navigator) {
-      console.log("vibration API supported")
-      navigator.vibrate([500, 300, 100]);
-    } else {
-      console.log("vibration API not supported")
-    }
+     if (navigator) {
+       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+       if ("vibrate" in navigator) {
+         console.log("vibration API supported")
+         navigator.vibrate([500, 300, 100]);
+       } else {
+         console.log("vibration API not supported")
+       }
+     }
   }
 
 
@@ -39,20 +41,26 @@ export default class RandomEgg extends Component {
   }
 
   render() {
+    this.state.toHome = false
+
     return (
       <div className="random-egg-wrapper container has-text-centered column">
         <SceneSwitcher accessScene="sceneRandomEgg" />
         { this.state.toHome && <Redirect to="/" /> }
         <div className="random-egg-box">
-          <div className="random-egg-bg box" />
-          <div className="random-egg-content">
+          <div className="random-egg-bg box">
+            <div className="random-egg-content">
               <h1 className="title"><b>เลือก "Tunagotchi" คู่กาย</b></h1>
               Tunagotchi ตัวนี้จะคอยติดตามคุณไปทุกที่
               มันจะร่วมต่อสู้และผจญภัยไปคุณ
+            </div>
           </div>
+          <div>
+            <Link to='/sceneIncubate' className="button is-primary">สุ่ม Tunagotchi</Link>
+          </div>
+          <div className="random-egg-footer" />
         </div>
-        <Link to='/sceneIncubate' className="button is-primary">สุ่ม Tunagotchi</Link>
-        // <MusicPlayer name="RandomEgg"/>
+        <MusicPlayer name="RandomEgg"/>
       </div>
     )
   }

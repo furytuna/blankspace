@@ -67,6 +67,7 @@ body {
 /* Random Egg */
 .random-egg-wrapper {
   background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
+	background-size: cover;
 	height: 100vh;
 }
 
@@ -79,23 +80,22 @@ body {
 .random-egg-bg {
 	padding: 0.2em 1.0em 2em 1.0em;
 	height: 160px;
-	position: absolute;
+	/*position: absolute;*/
 	z-index: 1;
 }
 
 .random-egg-bg.box {
+	background-color:rgba(255, 255, 255, 0.5);
 	left: 0;
 	right: 0;
-	width: 95%;
-	opacity: 0.5;
-	margin: 0px auto;
+	margin-bottom: 40px;
 }
 
 .random-egg-content {
 	padding: 0.2em 1.5em 2em 1.5em;
 	max-height: 500px;
 	overflow: auto;
-	position: absolute;
+	/*position: absolute;*/
 	z-index: 2;
 }
 
