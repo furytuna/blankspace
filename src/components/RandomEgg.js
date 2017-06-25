@@ -21,15 +21,19 @@ export default class RandomEgg extends Component {
   }
 
   componentWillUnmount() {
-     if (navigator) {
-       navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-       if ("vibrate" in navigator) {
-         console.log("vibration API supported")
-         navigator.vibrate([500, 300, 100]);
-       } else {
-         console.log("vibration API not supported")
-       }
-     }
+    if (this.props.currentScene === 'sceneRandomEgg') {
+      this.props.setCurrentScene(this.props.uid, 'sceneIncubate')
+    }
+
+    if (navigator) {
+      navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+      if ("vibrate" in navigator) {
+        console.log("vibration API supported")
+        navigator.vibrate([500, 300, 100]);
+      } else {
+        console.log("vibration API not supported")
+      }
+    }
   }
 
 
