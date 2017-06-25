@@ -46,7 +46,7 @@ export default {
     mature: {
       src: RockmanAnimation,
       name: "ภูผา ตามล่าชุดเกราะ",
-      history: "",
+      history: "เกราะกรูอยู่ไหน!!!! ตามหาชุดเกราะ หมาและถัง E กับข้าก่อน แล้วข้าจะช่วยท่าน",
       ability: {
 
       }
@@ -77,7 +77,7 @@ export default {
     mature: {
       src: NinjaAnimation,
       name: "นินจา นาจา",
-      history: "",
+      history: "`Lorem ipsum dolor sit amet` คือคติที่พวกเรายึดถือตลอดมา เราจะช่วยนายขับไล่ Veda ที่ชั่วร้ายเอง!",
       ability: {
 
       }
@@ -139,7 +139,7 @@ export default {
     mature: {
       src: OldmanAnimation,
       name: "ลุงตู่ พบธอร์",
-      history: "",
+      history: "จะวอนขอให้ตายยังไงใจเธอก็คงไม่เปลี่ยน เธออยากไป ชิคกีด้าววววว ~* งั้นเราจะทำตามสัญญา ...",
       ability: {
 
       }
@@ -170,7 +170,7 @@ export default {
     mature: {
       src: YoungmanAnimation,
       name: "จิมมี่ ครับผม!",
-      history: "",
+      history: "ใน Sriracha Metropolis ไม่มีใครไม่รู้จักผม เจ้า Veda ระวังไว้!",
       ability: {
 
       }
@@ -196,7 +196,7 @@ export default {
     mature: {
       src: MarioAnimation,
       name: "เมาลีโอ วิ่งตามหญิง",
-      history: "",
+      history: "เห็ดในสิ่งที่เชื่อ เชื่อในสิ่งที่เห็ด",
       ability: {
 
       }
@@ -222,7 +222,7 @@ export default {
     mature: {
       src: PigachuAnimation,
       name: "เทพเจ้าสิ้นเดือน ช็อตจิๆ",
-      history: "",
+      history: "ปิๆๆๆๆๆๆๆๆก้าาาาาาา จิ้วๆๆๆๆๆๆๆๆ",
       ability: {
 
       }
