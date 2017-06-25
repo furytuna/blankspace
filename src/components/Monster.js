@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MusicPlayer from './MusicPlayer'
+import MusicPlayer from '../containers/MusicPlayer'
 import SceneSwitcher from '../containers/SceneSwitcher'
 
 class Monster extends Component {
