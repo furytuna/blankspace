@@ -10,7 +10,7 @@ class SceneSwitcher extends Component {
   }
 
   componentWillMount() {
-    if (!(this.props.accessScene === this.props.currentScene)) {
+    if (!this.props.uid || !(this.props.accessScene === this.props.currentScene)) {
       this.setState({ willRedirect: true })
     }
   }

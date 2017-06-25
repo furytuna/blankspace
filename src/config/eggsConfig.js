@@ -19,7 +19,7 @@ export default {
         {
           name: "sky",
           desc: "ท้องฟ้า",
-          require: 1
+          require: 2
         },
         {
           name: "rock",
@@ -29,18 +29,8 @@ export default {
         {
           name: "male",
           desc: "ผู้ชาย",
-          require: 1
+          require: 5
         },
-        {
-          name: "glasses",
-          desc: "แว่นตา",
-          require: 2
-        },
-        {
-          name: "mobile phone",
-          desc: "โทรศัพท์",
-          require: 4
-        }
       ]
     },
     mature: {

@@ -361,13 +361,17 @@ body {
   padding: 20px;
 }
 
-
+/* Animations */
 .flash {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	animation-name: flashing;
+	animation-duration: 5000ms;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
 	-webkit-animation-name: flashing;
 	-webkit-animation-duration: 5000ms;
 	-webkit-animation-iteration-count: 1;
@@ -377,14 +381,42 @@ body {
 	z-index: 99999;
 }
 
-@-webkit-keyframes flashing {
+@keyframes flashing {
     0% {
 			opacity: 0;
     }
-		20% {
+		15% {
+			opacity: 0;
+		}
+		30% {
 			opacity: 1;
 		}
     100% {
-      opacity:1;
+      opacity: 1;
     }
+}
+
+.shaking-egg {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(20px, 0, 0);
+  }
 }
