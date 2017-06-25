@@ -49,6 +49,7 @@ export default class Feed extends Component {
         flashMessage = 'ไม่เจออาหาร จย้าา~!'
         this.props.setFlashMessage(flashMessage)
       }
+      this.props.setCurrentScene(this.props.profile.uid, 'sceneIncubate')
       this.setState({
         result: true
       })

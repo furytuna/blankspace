@@ -12,6 +12,11 @@ class Incubate extends Component {
       goToMonster: false
     }
   }
+  componentWillUnmount() {
+    if (this.props.monster.currentState === 'egg') {
+      this.props.setCurrentScene(this.props.uid, 'sceneFeed')
+    }
+  }
   share() {
     if (navigator.share) {
       navigator.share({
@@ -26,7 +31,6 @@ class Incubate extends Component {
   }
 
   goToMonster = () => {
-    console.log("gotomonster")
     this.setState({
       flashing: true
     })
@@ -38,6 +42,7 @@ class Incubate extends Component {
       console.log("vibration API not supported")
     }
     setTimeout(() => {
+      this.props.setCurrentScene(this.props.uid, 'sceneMonster')            
       this.setState({
         goToMonster: true
       })
