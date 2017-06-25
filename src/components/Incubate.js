@@ -50,7 +50,7 @@ class Incubate extends Component {
   }
 
   render() {
-    let monster = this.props.monster.egg;
+    let monster = (this.props.monster) ? this.props.monster.egg : { food: []}
     let listOfFood = monster.food.map((food) => {
       return (<li key={food.name}>- {food.desc} {food.require} อัน</li>) ;
     })

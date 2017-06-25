@@ -4,7 +4,7 @@ import SceneSwitcher from '../containers/SceneSwitcher'
 
 class Monster extends Component {
   render() {
-    let monster = this.props.monster.mature
+    let monster = (this.props.monster) ? this.props.monster.mature : {}
     return (
       <div className="monster-wrapper container has-text-centered column">
         <SceneSwitcher accessScene="sceneMonster" />
