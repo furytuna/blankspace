@@ -23,6 +23,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	height: 100vh;
 }
 
 .button.is-primary {
@@ -68,7 +69,6 @@ body {
 .random-egg-wrapper {
   background: url(../images/bg_random_egg.gif) no-repeat center center fixed;
 	background-size: cover;
-	height: 100vh;
 }
 
 .random-egg-box {
@@ -161,7 +161,6 @@ body {
 /* Feed */
 .feed-wrapper {
   background: url(../images/bg_incubate.gif) no-repeat center center fixed;
-	height: 100vh;
 }
 
 .feed-box {
@@ -213,7 +212,6 @@ body {
 .monster-wrapper {
   background: url(../images/bg_monster.gif) no-repeat center center fixed;
 	background-size: cover;
-	height: 100vh;
 }
 
 .monster-box {
