@@ -24,9 +24,9 @@ class Register extends Component {
   render() {
     return(
       <div>
-        {this.props.profile.uid ? 
-        (<Link to={this.props.currentScene} className="button is-primary">เล่นต่อ</Link>) : 
-        (<button onClick={this.loginWithFacebook} className="loginBtn loginBtn-facebook">Login with Facebook</button>)
+        {this.props.profile.uid ?
+        (<Link to={this.props.currentScene} className="button is-primary">เล่นต่อ</Link>) :
+        (<button onClick={this.loginWithFacebook} className="loginBtn loginBtn--facebook">Login with Facebook</button>)
         }
       </div>
     )
