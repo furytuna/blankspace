@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
 import Feed from '../components/Feed'
-import { decreateFeedRequirement } from '../actions/feed'
+import { decreaseFeedRequirement } from '../actions/monster'
 import { setFlashMessage } from '../actions/flash_message'
 
 const mapStateToProps = (state) => ({
-  monster: state.monster
+  monster: state.monster,
+  profile: state.profile
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  decreateFeedRequirement: (requiredFoods, foodName) => dispatch(decreateFeedRequirement(requiredFoods, foodName)),
+  decreaseFeedRequirement: (uid, foodName) => dispatch(decreaseFeedRequirement(uid, foodName)),
   setFlashMessage: (message) => dispatch(setFlashMessage(message))
 })
 

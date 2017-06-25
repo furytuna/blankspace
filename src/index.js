@@ -4,7 +4,7 @@ import Prologue from './components/Prologue'
 import RandomEgg from './containers/RandomEgg'
 import Incubate from './containers/Incubate'
 import Feed from './containers/Feed'
-import Monster from './components/Monster'
+import Monster from './containers/Monster'
 import firebase from 'firebase'
 import {
   BrowserRouter as Router,
